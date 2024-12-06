@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Best Budz</title>
-     <!-- Open Graph Meta Tags -->
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Best Budz - Your Go-To Shop for Quality Products" />
     <meta property="og:description" content="Best Budz offers a variety of high-quality products. Check out our latest collection!" />
     <meta property="og:image" content="https://bestbudz.xyz/weed_guy_1.png" />
@@ -79,12 +79,20 @@
         <p>&copy; 2024 Advanced E-Commerce Store | All Rights Reserved.</p>
     </footer>
 
+    <!-- Age Verification Popup -->
+    <div id="age-verification-popup" class="popup">
+        <div class="popup-content">
+            <h2>Are you 21 years or older?</h2>
+            <button id="age-verification-yes" class="popup-btn">Yes</button>
+            <button id="age-verification-no" class="popup-btn">No</button>
+        </div>
+    </div>
+
     <!-- Shopping Cart Sidebar -->
     <div id="cart-sidebar" class="cart-sidebar">
         <button id="close-cart" class="close-cart-btn">X</button>
         <h2>Shopping Cart</h2>
         <div id="cart-details"></div>
-     </div>
     </div>
 
     <!-- Snipcart Integration (Replace with your actual public API key) -->
@@ -99,17 +107,92 @@
             const cartButton = document.getElementById("cart-button");
             const cartSidebar = document.getElementById("cart-sidebar");
             const closeCart = document.getElementById("close-cart");
+            const agePopup = document.getElementById("age-verification-popup");
+            const ageVerificationYes = document.getElementById("age-verification-yes");
+            const ageVerificationNo = document.getElementById("age-verification-no");
+
+            // Check if age verification has been completed before
+            const ageVerified = localStorage.getItem("ageVerified");
+
+            if (ageVerified === "true") {
+                // If the user has already verified their age, don't show the popup
+                agePopup.classList.remove("show");
+            } else {
+                // If not verified, show the popup
+                agePopup.classList.add("show");
+            }
+
+            // Close cart sidebar
+            closeCart.addEventListener("click", () => {
+                cartSidebar.classList.remove("visible");
+            });
 
             // Open cart sidebar
             cartButton.addEventListener("click", () => {
                 cartSidebar.classList.add("visible");
             });
 
-            // Close cart sidebar
-            closeCart.addEventListener("click", () => {
-                cartSidebar.classList.remove("visible");
+            // Age verification logic
+            ageVerificationYes.addEventListener("click", () => {
+                localStorage.setItem("ageVerified", "true");
+                agePopup.classList.remove("show");
+                // User is 21 or older, proceed to site
+            });
+
+            ageVerificationNo.addEventListener("click", () => {
+                localStorage.setItem("ageVerified", "false");
+                agePopup.classList.remove("show");
+                alert("You must be 21 or older to access this site.");
+                // Optionally, redirect to another page or disable further interaction
             });
         });
     </script>
+
+    <!-- Popup Styling -->
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup.show {
+            display: flex;
+        }
+
+        .popup-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .popup h2 {
+            margin-bottom: 20px;
+        }
+
+        .popup-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .popup-btn:hover {
+            background-color: #218838;
+        }
+    </style>
 </body>
 </html>
