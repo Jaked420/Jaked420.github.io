@@ -23,7 +23,11 @@ header {
 }
 
 .site-title {
-    font-size: 24px;
+    font-size: 24px;  /* Match the font size in product page */
+    font-weight: bold;  /* Ensure title is bold */
+    color: white; /* Title color */
+    text-transform: uppercase; /* Uppercase letters for consistency */
+    letter-spacing: 2px; /* Spacing between letters for emphasis */
 }
 
 .header-actions {
@@ -113,7 +117,7 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: relative; /* Ensure footer is below content, not fixed */
+    position: relative;
 }
 
 /* Shopping Cart Sidebar */
@@ -173,11 +177,11 @@ button {
 }
 
 .snipcart-add-item:hover {
-    color: #ff6347 !important;             /* Orange hover color, same as nav */
+    color: #ff6347 !important;             /* Orange hover color */
     text-decoration: underline !important; /* Keep underline on hover */
 }
 
-/* Coinbase Button Styling (Crypto Payment) */
+/* Coinbase Button Styling */
 .coinbase-button {
     color: black !important;               /* White text */
     text-decoration: underline !important; /* Underlined text */
@@ -215,7 +219,6 @@ button {
 }
 
 @media (max-width: 768px) {
-    /* For smaller screens, keep images at 80% */
     #featured .featured-image,
     #second-image-section img {
         max-width: 80%;
