@@ -21,6 +21,16 @@ header {
     margin: 0 auto;
     padding: 0 20px;
 }
+.explore-btn {
+    color: black; /* Set text color to black */
+    text-decoration: none; /* Remove underline if needed */
+}
+
+.explore-btn:hover {
+    color: #ff6347; /* Optional: Add a hover effect */
+    text-decoration: underline; /* Optional: Add underline on hover */
+}
+
 
 .site-title {
     font-size: 24px;  /* Match the font size in product page */
