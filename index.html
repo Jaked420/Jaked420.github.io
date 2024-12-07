@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Best Budz</title>
-     <!-- Open Graph Meta Tags -->
+    
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Best Budz - Your Go-To Shop for Quality Products" />
     <meta property="og:description" content="Best Budz offers a variety of high-quality products. Check out our latest collection!" />
     <meta property="og:image" content="weed_guy_1.png" />
@@ -12,7 +13,7 @@
     <meta name="twitter:card" content="weed_guy_1" />
     <meta name="twitter:title" content="Best Budz - Your Go-To Shop for Quality Products" />
     <meta name="twitter:description" content="Best Budz offers a variety of high-quality products. Check out our latest collection!" />
-    <meta name="twitter:image" content="https://example.com/path/to/your-image.jpg" />
+    <meta name="twitter:image" content="weed_guy_1.png" />
 
     <!-- Snipcart CSS -->
     <link href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" rel="stylesheet" />
@@ -21,12 +22,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <!-- Header Section -->
     <header>
         <div class="header-container">
             <h1 class="site-title">Best Budz</h1>
             <div class="header-actions">
-                <!-- Shopping Cart Button -->
                 <button id="cart-button" class="cart-btn" data-snippet="snipcart">
                     <img src="cart_2.png" alt="Cart" class="cart-icon">
                 </button>
@@ -54,7 +55,7 @@
         <!-- Featured Image Section -->
         <section id="featured">
             <div class="image-container">
-                <img src="weed_guy_1.png" alt="Featured Product" class="featured-image">
+                <img src="/Images/weed_guy_1.png" alt="Featured Product" class="featured-image">
                 <p>Our featured product – high-quality and affordable!</p>
             </div>
         </section>
@@ -62,7 +63,7 @@
         <!-- Second Image Section -->
         <section id="second-image-section">
             <div class="image-container">
-                <img src="weed_guy_2.png" alt="Second Featured Product" class="featured-image">
+                <img src="/Images/weed_guy_2.png" alt="Second Featured Product" class="featured-image">
                 <p>Discover our second featured product, available now!</p>
             </div>
         </section>
@@ -70,10 +71,110 @@
         <!-- About My Website Section -->
         <section id="about">
             <h3>About Our Website</h3>
-            <p>Welcome to Best Budz!
-At Best Budz, our customers are our top priority. That’s why we’re dedicated to offering high-quality products at prices you can afford. We believe everyone deserves the best without breaking the bank, and we’re here to deliver just that.</p>
+            <p>Welcome to Best Budz! At Best Budz, our customers are our top priority. That’s why we’re dedicated to offering high-quality products at prices you can afford. We believe everyone deserves the best without breaking the bank, and we’re here to deliver just that.</p>
+        </section>
+        <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+
+<script>
+  /* Initialize Formspree form button */
+  window.formbutton = window.formbutton || function () {
+    (formbutton.q = formbutton.q || []).push(arguments);
+  };
+
+  /* Customize Formspree button */
+  formbutton("create", {
+    action: "https://formspree.io/f/xvgonobw", // Replace with your actual Form ID
+    title: "Contact Us",
+    fields: [
+      {
+        type: "email",
+        label: "Email:",
+        name: "email",
+        required: true,
+        placeholder: "your@email.com",
+      },
+      {
+        type: "textarea",
+        label: "Message:",
+        name: "message",
+        placeholder: "What's on your mind?",
+      },
+      { type: "submit" },
+    ],
+    styles: {
+      title: {
+        backgroundColor: "#333",
+        color: "white",
+        fontSize: "18px",
+        fontWeight: "bold",
+        textTransform: "uppercase",
+        letterSpacing: "2px",
+        borderRadius: "5px",
+        padding: "10px",
+      },
+      button: {
+        backgroundColor: "#ff6347",
+        color: "white",
+        fontSize: "16px",
+        fontWeight: "bold",
+        padding: "10px 20px",
+        borderRadius: "8px",
+        cursor: "pointer",
+      },
+    },
+    position: "bottom-right", // Adjust the position if needed
+    initiallyVisible: false,  // Dont Show button on load
+  });
+</script>
+
+        <!-- Comments Section -->
+        <section id="comments">
+            <h3>Comments</h3>
+            <script src="https://utteranc.es/client.js"
+                    repo="YOUR_GITHUB_USERNAME/website-comments"
+                    issue-term="pathname"
+                    label="Comment"
+                    theme="github-light"
+                    crossorigin="anonymous"
+                    async>
+            </script>
         </section>
     </main>
+
+    <!-- TradingView Widget BEGIN -->
+    <style>
+        .tradingview-widget-container {
+            width: 100%;  /* Make the width responsive */
+            max-width: 600px;  /* Optional: Limit the max width */
+            margin: 0 auto;  /* Center it on the page */
+        }
+        .tradingview-widget-container__widget {
+            width: 100%;  /* Fill the container */
+        }
+    </style>
+
+    <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <div class="tradingview-widget-copyright">
+            <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
+                <span class="blue-text">Track all markets on TradingView</span>
+            </a>
+        </div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+        {
+            "symbol": "BINANCE:BTCUSD",
+            "width": "100%",
+            "height": "400",
+            "locale": "en",
+            "dateRange": "12M",
+            "colorTheme": "light",
+            "isTransparent": false,
+            "autosize": true,
+            "largeChartUrl": ""
+        }
+        </script>
+    </div>
+    <!-- TradingView Widget END -->
 
     <!-- Footer Section -->
     <footer>
@@ -86,9 +187,8 @@ At Best Budz, our customers are our top priority. That’s why we’re dedicated
         <h2>Shopping Cart</h2>
         <div id="cart-details"></div>
      </div>
-    </div>
 
-    <!-- Snipcart Integration (Replace with your actual public API key) -->
+    <!-- Snipcart Integration -->
     <div hidden id="snipcart" data-api-key="ZGFhOTc3ZTYtYzdhOS00N2U0LTllNDUtM2QxMDY4ZTA0NWIyNjM4NjQ0Mzg1NTY4NzMxMTkz"></div>
 
     <!-- Snipcart JavaScript -->

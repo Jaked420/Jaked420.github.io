@@ -1,0 +1,10 @@
+{
+  "method": "create_series",
+  "args": [
+    "sds_1", 
+    "s1", 
+    "sds_sym_1", 
+    "1h", 
+    300
+  ]
+}
