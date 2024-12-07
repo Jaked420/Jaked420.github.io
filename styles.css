@@ -241,12 +241,6 @@ button {
     }
 }
 /* Form Button Styling */
-@media (max-width: 768px) {
-    .formbutton-container {
-        margin-bottom: 150px; /* Ensure space between the button and footer */
-    }
-}
-
 .formbutton-container .formbutton-title {
     background-color: #333 !important; /* Match header background */
     color: white !important;
@@ -257,8 +251,9 @@ button {
     border-radius: 5px;
     padding: 10px;
 }
+
 .formbutton-container .formbutton-button {
-    position: relative; /* Allows precise positioning without overlap */
+    position: static; /* Allows precise positioning without overlap */
     margin-bottom: 20px; /* Add spacing below the button */
     top: -10px; /* Moves the button slightly up if needed */
     background-color: #ff6347 !important; /* Match hover color in nav links */
@@ -271,8 +266,12 @@ button {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Add media query for smaller screens to adjust spacing */
+/* Media query for smaller screens to adjust spacing */
 @media (max-width: 768px) {
+    .formbutton-container {
+        margin-bottom: 150px; /* Ensure space between the button and footer */
+    }
+
     .formbutton-container .formbutton-button {
         top: auto; /* Reset top positioning on smaller screens */
         margin-top: 0; /* Prevent overlap with the footer */
