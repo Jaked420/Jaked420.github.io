@@ -262,7 +262,7 @@ button {
     font-size: 16px !important;
     font-weight: bold;
     border-radius: 8px;
-    padding: 10px 20px !important;
+    padding: 10px 40px !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     transition: transform 0.3s ease-in-out;
 }
