@@ -255,8 +255,10 @@ button {
     border-radius: 5px;
     padding: 10px;
 }
-
 .formbutton-container .formbutton-button {
+    margin-top: -20px; /* Moves the button higher relative to its container */
+    position: relative; /* Allows precise positioning with the top property */
+    top: -10px; /* Moves the button further up */
     background-color: #ff6347 !important; /* Match hover color in nav links */
     color: white !important;
     font-size: 16px !important;
