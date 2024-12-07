@@ -242,6 +242,7 @@ button {
 }
 /* Form Button Styling */
 .formbutton-container {
+    margin-bottom: 100px;
     font-family: Arial, sans-serif;
 }
 
