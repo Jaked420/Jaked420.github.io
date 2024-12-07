@@ -258,11 +258,9 @@ button {
     padding: 10px;
 }
 .formbutton-container .formbutton-button {
-    position: static; /* Reset positioning */
+    position: relative; /* Allows precise positioning without overlap */
     margin-bottom: 20px; /* Add spacing below the button */
-    margin-top: -50px; /* Moves the button higher relative to its container */
-    position: relative; /* Allows precise positioning with the top property */
-    top: -10px; /* Moves the button further up */
+    top: -10px; /* Moves the button slightly up if needed */
     background-color: #ff6347 !important; /* Match hover color in nav links */
     color: white !important;
     font-size: 16px !important;
@@ -271,6 +269,15 @@ button {
     padding: 10px 40px !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     transition: transform 0.3s ease-in-out;
+}
+
+/* Add media query for smaller screens to adjust spacing */
+@media (max-width: 768px) {
+    .formbutton-container .formbutton-button {
+        top: auto; /* Reset top positioning on smaller screens */
+        margin-top: 0; /* Prevent overlap with the footer */
+        margin-bottom: 150px; /* Ensure enough space above the footer */
+    }
 }
 
 .formbutton-container .formbutton-button:hover {
