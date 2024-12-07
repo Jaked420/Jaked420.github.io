@@ -241,9 +241,10 @@ button {
     }
 }
 /* Form Button Styling */
-.formbutton-container {
-    margin-bottom: 100px;
-    font-family: Arial, sans-serif;
+@media (max-width: 768px) {
+    .formbutton-container {
+        margin-bottom: 150px; /* Ensure space between the button and footer */
+    }
 }
 
 .formbutton-container .formbutton-title {
