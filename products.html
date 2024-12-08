@@ -366,30 +366,32 @@
                             { type: "submit" },
                         ],
                         styles: {
-                            title: {
-                                backgroundColor: "#333",
-                                color: "white",
-                                fontSize: "18px",
-                                fontWeight: "bold",
-                                textTransform: "uppercase",
-                                letterSpacing: "2px",
-                                borderRadius: "5px",
-                                padding: "10px",
-                            },
-                            button: {
-                                backgroundColor: "#ff6347",
-                                color: "white",
-                                fontSize: "16px",
-                                fontWeight: "bold",
-                                padding: "10px 20px",
-                                borderRadius: "8px",
-                                cursor: "pointer",
-                            },
-                        },
-                        position: "bottom-right", // Adjust the position if needed
-                        initiallyVisible: false, // Ensure it doesn't pop up automatically
-                    });
-                </script>
+    title: {
+        backgroundColor: "#333",
+        color: "white",
+        fontSize: "18px",
+        fontWeight: "bold",
+        textTransform: "uppercase",
+        letterSpacing: "2px",
+        borderRadius: "5px",
+        padding: "10px",
+    },
+    button: {
+        backgroundColor: "transparent", // Make the background transparent
+        color: "white",
+        fontSize: "16px",
+        fontWeight: "bold",
+        padding: "10px 20px",
+        borderRadius: "8px",
+        cursor: "pointer",
+        border: "1px solid #ff6347", // Add a border with smaller size
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Add a subtle shadow
+        transition: "transform 0.3s ease-in-out, background-color 0.3s ease-in-out",
+    },
+},
+position: "bottom-right", // Adjust the position if needed
+initiallyVisible: false, // Ensure it doesn't pop up automatically
+
             </section>
         </main>
 
