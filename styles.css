@@ -265,14 +265,14 @@ button {
 
 .formbutton-container .formbutton-button {
     position: relative; /* Adjust positioning to ensure it doesn't overlap */
-    margin-bottom: 20px; /* Space below the button */
+    margin-bottom: 30px; /* Space below the button */
     background-color: transparent !important; /* Transparent background */
-    color: white !important;
+    color: #000000 !important;
     font-size: 16px !important;
     font-weight: bold;
-    border-radius: 8px;
+    border-radius: 4px;
     padding: 10px 40px !important;
-    border: 1px solid #ff6347; /* Smaller border */
+    border: .5px solid #ff6347; /* Smaller border */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
