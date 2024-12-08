@@ -31,10 +31,9 @@ header {
     text-decoration: underline; /* Optional: Add underline on hover */
 }
 
-
 .site-title {
-    font-size: 24px;  /* Match the font size in product page */
-    font-weight: bold;  /* Ensure title is bold */
+    font-size: 24px; /* Match the font size in product page */
+    font-weight: bold; /* Ensure title is bold */
     color: white; /* Title color */
     text-transform: uppercase; /* Uppercase letters for consistency */
     letter-spacing: 2px; /* Spacing between letters for emphasis */
@@ -124,28 +123,27 @@ main {
 
 /* Footer Styling */
 footer {
-  display: flex;
-  justify-content: space-between; /* This will space the text and link */
-  align-items: center; /* Vertically align the text and button */
-  padding: 2px;
-  background-color: #333; /* Change the background color as needed */
-  color: white; /* Text color */
+    display: flex;
+    justify-content: space-between; /* This will space the text and link */
+    align-items: center; /* Vertically align the text and button */
+    padding: 2px;
+    background-color: #333; /* Change the background color as needed */
+    color: white; /* Text color */
 }
 
 footer p {
-  margin: 0;
+    margin: 0;
 }
 
 .tos-link {
-  color: white; /* Link color */
-  text-decoration: none; /* Remove underline */
-  font-size: 14px; /* Adjust font size as needed */
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 14px; /* Adjust font size as needed */
 }
 
 .tos-link:hover {
-  text-decoration: underline; /* Add underline on hover */
+    text-decoration: underline; /* Add underline on hover */
 }
-
 
 /* Shopping Cart Sidebar */
 .cart-sidebar {
@@ -196,38 +194,47 @@ button {
 
 /* Snipcart Button Styling */
 .snipcart-add-item {
-    color: black !important;               /* White text */
+    color: black !important; /* White text */
     text-decoration: underline !important; /* Underlined text */
-    width: auto !important;                /* Auto width for the text */
-    font-size: 1.1em !important;           /* Font size */
+    width: auto !important; /* Auto width for the text */
+    font-size: 1.1em !important; /* Font size */
     background-color: transparent !important; /* Transparent background */
 }
 
 .snipcart-add-item:hover {
-    color: #ff6347 !important;             /* Orange hover color */
+    color: #ff6347 !important; /* Orange hover color */
     text-decoration: underline !important; /* Keep underline on hover */
 }
 
 /* Coinbase Button Styling */
 .coinbase-button {
-    color: black !important;               /* White text */
+    color: black !important; /* White text */
     text-decoration: underline !important; /* Underlined text */
-    width: auto !important;                /* Auto width for the text */
-    font-size: 1.1em !important;           /* Font size */
+    width: auto !important; /* Auto width for the text */
+    font-size: 1.1em !important; /* Font size */
     background-color: transparent !important; /* Transparent background */
 }
 
 .coinbase-button:hover {
-    color: #ff6347 !important;             /* Orange hover color */
+    color: #ff6347 !important; /* Orange hover color */
     text-decoration: underline !important; /* Keep underline on hover */
 }
 
 /* Red Background Behind Green Buttons */
+/* Product Grid Layout */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
 .product {
     text-align: center;
     margin-bottom: 30px;
     padding: 10px;
-    background-color: #f44336; /* Red background */
+    background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
@@ -237,6 +244,70 @@ button {
     transform: translateY(-5px);
 }
 
+.product-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.product h3 {
+    font-size: 1.3em;
+    margin-top: 10px;
+    color: #333;
+}
+
+.product p {
+    color: #777;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+.snipcart-add-item,
+.coinbase-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+.snipcart-add-item:hover,
+.coinbase-button:hover {
+    background-color: #218838;
+}
+
+/* Red Styling for Coinbase Payment Button */
+.coinbase-button {
+    background-color: #218838; /* Red background */
+    border: none;
+}
+
+.coinbase-button:hover {
+    background-color: #c70000; /* Darker red on hover */
+}
+
+/* Mobile Styling (for screens smaller than 768px) */
+@media (max-width: 768px) {
+    .product-list {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image {
+        max-width: 80%;
+    }
+}
+
+/* Desktop Styling (for screens larger than 768px) */
+@media (min-width: 768px) {
+    .product-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 /* Media Queries for Larger Screens */
 @media (min-width: 1024px) {
     #featured .featured-image,
@@ -272,7 +343,7 @@ button {
     font-weight: bold;
     border-radius: 4px;
     padding: 10px 40px !important;
-    border: .5px solid #ff6347; /* Smaller border */
+    border: 0.5px solid #ff6347; /* Smaller border */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
@@ -297,4 +368,3 @@ button {
     background-color: rgba(255, 99, 71, 0.1) !important; /* Subtle light orange background on hover */
     border-color: #ff4500; /* Change border color on hover */
 }
-
