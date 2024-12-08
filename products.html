@@ -344,29 +344,34 @@
                         function () {
                             (formbutton.q = formbutton.q || []).push(arguments);
                         };
+                 <script>
+  /* Initialize Formspree form button */
+  window.formbutton = window.formbutton || function () {
+    (formbutton.q = formbutton.q || []).push(arguments);
+  };
 
-                    /* Customize Formspree button */
-                    formbutton("create", {
-                        action: "https://formspree.io/f/xvgonobw", // Replace with your actual Form ID
-                        title: "Contact Us",
-                        fields: [
-                            {
-                                type: "email",
-                                label: "Email:",
-                                name: "email",
-                                required: true,
-                                placeholder: "your@email.com",
-                            },
-                            {
-                                type: "textarea",
-                                label: "Message:",
-                                name: "message",
-                                placeholder: "What's on your mind?",
-                            },
-                            { type: "submit" },
-                        ],
-                        styles: {
-    title: {
+  /* Customize Formspree button */
+  formbutton("create", {
+    action: "https://formspree.io/f/xvgonobw", // Replace with your actual Form ID
+    title: "Contact Us",
+    fields: [
+      {
+        type: "email",
+        label: "Email:",
+        name: "email",
+        required: true,
+        placeholder: "your@email.com",
+      },
+      {
+        type: "textarea",
+        label: "Message:",
+        name: "message",
+        placeholder: "What's on your mind?",
+      },
+      { type: "submit" },
+    ],
+    styles: {
+      title: {
         backgroundColor: "#333",
         color: "white",
         fontSize: "18px",
@@ -375,23 +380,22 @@
         letterSpacing: "2px",
         borderRadius: "5px",
         padding: "10px",
-    },
-    button: {
-        backgroundColor: "transparent", // Make the background transparent
-        color: "white",
-        fontSize: "16px",
+      },
+      button: {
+        backgroundColor: "transparent",
+        color: "black",
+        fontSize: "8px",
         fontWeight: "bold",
         padding: "10px 20px",
-        borderRadius: "8px",
+        borderRadius: "4px",
         cursor: "pointer",
-        border: "1px solid #ff6347", // Add a border with smaller size
-        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Add a subtle shadow
-        transition: "transform 0.3s ease-in-out, background-color 0.3s ease-in-out",
+      },
     },
-},
-position: "bottom-right", // Adjust the position if needed
-initiallyVisible: false, // Ensure it doesn't pop up automatically
-                </script>
+    position: "bottom-right", // Adjust the position if needed
+    initiallyVisible: false,  // Dont Show button on load
+  });
+</script> 
+            <!--End of formspree--!>        
             </section>
         </main>
 
