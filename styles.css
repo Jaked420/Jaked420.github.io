@@ -154,7 +154,7 @@ footer {
     display: flex;  /* Use flexbox to align footer content */
     justify-content: space-between;  /* Space the items out */
     align-items: center;  /* Vertically align the items */
-    padding: 8px;  /* Add padding to the footer */
+    padding: 2px;  /* Add padding to the footer */
     background-color: #333;  /* Set a dark background color for the footer */
     color: white;  /* Set the footer text color to white */
 }
@@ -288,7 +288,7 @@ button {
 
 .formbutton-container .formbutton-button {
     position: relative;  /* Adjust the positioning of the button */
-    margin-bottom: 30px;  /* Add margin below the button */
+    margin-bottom: 60px;  /* Add margin below the button */
     background-color: transparent !important;  /* Make the background transparent */
     color: #000000 !important;  /* Set text color to black */
     font-size: 16px !important;  /* Set the font size */
