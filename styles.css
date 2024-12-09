@@ -135,7 +135,9 @@ main {
     padding: 20px;  /* Add padding inside the About section */
     background-color: #e0e0e0;  /* Set a light gray background color */
     border-radius: 8px;  /* Round the corners of the About section */
+    border: none;
 }
+
 
 #about h3 {
     font-size: 24px;  /* Set font size for the header in the About section */
