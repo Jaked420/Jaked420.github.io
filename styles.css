@@ -288,7 +288,7 @@ button {
 
 .formbutton-container .formbutton-button {
     position: static;  /* Adjust the positioning of the button */
-    margin-bottom: 30px;  /* Add margin below the button */
+    margin-bottom: 150px;  /* Add margin below the button */
     background-color: transparent !important;  /* Make the background transparent */
     color: #000000 !important;  /* Set text color to black */
     font-size: 16px !important;  /* Set the font size */
