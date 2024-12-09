@@ -295,8 +295,8 @@ button {
     font-weight: bold;  /* Make the button text bold */
     border-radius: 4px;  /* Round the corners of the button */
     padding: 10px 40px !important;  /* Add padding to the button */
-    border: 0.5px solid #ff634700;  /* Add a subtle border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Add a subtle shadow */
+      /* Add a subtle border */
+      /* Add a subtle shadow */
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;  /* Add transition effects */
 }
 
