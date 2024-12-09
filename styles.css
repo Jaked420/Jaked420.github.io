@@ -154,13 +154,13 @@ footer {
     display: flex;  /* Use flexbox to align footer content */
     justify-content: space-between;  /* Space the items out */
     align-items: center;  /* Vertically align the items */
-    padding: 2px;  /* Add padding to the footer */
+    padding: 8px;  /* Add padding to the footer */
     background-color: #333;  /* Set a dark background color for the footer */
     color: white;  /* Set the footer text color to white */
 }
 
 footer p {
-    margin: 4;  /* Remove the margin from the footer paragraph */
+    margin: 0;  /* Remove the margin from the footer paragraph */
 }
 
 .tos-link {
