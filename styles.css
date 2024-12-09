@@ -293,8 +293,8 @@ button {
     color: #000000 !important;  /* Set text color to black */
     font-size: 16px !important;  /* Set the font size */
     font-weight: bold;  /* Make the button text bold */
-    border-radius: 4px;  /* Round the corners of the button */
-    padding: 10px 40px !important;  /* Add padding to the button */
+    border: none;  /* Round the corners of the button */
+    padding: 5px 20px !important;  /* Add padding to the button */
       /* Add a subtle border */
       /* Add a subtle shadow */
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;  /* Add transition effects */
