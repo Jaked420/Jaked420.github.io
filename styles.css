@@ -160,7 +160,7 @@ footer {
 }
 
 footer p {
-    margin: 0px;  /* Remove the margin from the footer paragraph */
+    margin: 2px;  /* Remove the margin from the footer paragraph */
 }
 
 .tos-link {
