@@ -1,7 +1,7 @@
 /* General Styling */
 body {
     font-family: Arial, sans-serif;  /* Set the default font for the page */
-    margin: 60;  /* Remove default margin */
+    margin: 0;  /* Remove default margin */
     padding: 0;  /* Remove default padding */
     background-color: #f4f4f4;  /* Set a light gray background color for the page */
 }
