@@ -160,7 +160,7 @@ footer {
 }
 
 footer p {
-    margin: 2px;  /* Remove the margin from the footer paragraph */
+    margin: 0px;  /* Remove the margin from the footer paragraph */
 }
 
 .tos-link {
@@ -287,8 +287,8 @@ button {
 }
 
 .formbutton-container .formbutton-button {
-    position: static;  /* Adjust the positioning of the button */
-    margin-bottom: 150px;  /* Add margin below the button */
+    position: relative;  /* Adjust the positioning of the button */
+    margin-bottom: 100px;  /* Add margin below the button */
     background-color: transparent !important;  /* Make the background transparent */
     color: #000000 !important;  /* Set text color to black */
     font-size: 16px !important;  /* Set the font size */
@@ -303,7 +303,7 @@ button {
 /* Media query for smaller screens to adjust spacing */
 @media (max-width: 768px) {
     .formbutton-container {
-        margin-bottom: 150px;  /* Ensure enough space above the footer */
+        margin-bottom: 100px;  /* Ensure enough space above the footer */
     }
 
     .formbutton-container .formbutton-button {
