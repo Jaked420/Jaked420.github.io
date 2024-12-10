@@ -149,18 +149,6 @@ nav ul li a:hover {
         top: 0; /* Position at the top of the viewport */
     }
 }
-@media (max-width: 768px)
-.nav-links {
-    display: none; /* Hide the navigation links by default */
-    flex-direction: column; /* Stack the links vertically */
-    background-color: #000000; /* Set a dark background color for the mobile menu */
-    position: absolute; /* Position the menu absolutely */
-    top: 40px; /* Position the menu just below the header */
-    right: 10px; /* Align the menu to the right */
-    width: 200px; /* Set a fixed width for the menu */
-    padding: 20px; /* Add padding to the menu */
-    border-radius: 5px; /* Round the corners of the menu */
-}
 
 /* Main Content Styling */
 main {
