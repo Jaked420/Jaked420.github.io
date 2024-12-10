@@ -8,10 +8,8 @@ body {
 
 /* Header Styling */
 header {
-    background-image: 
-        linear-gradient(to right, rgba(255, 0, 0, 0.5), rgba(255, 255, 0, 0.5), rgba(0, 128, 0, 0.5)), /* Transparent Rasta overlay */
-        url("/Images/header.png"); /* Replace with the correct path to your image */
-    background-size: cover; /* Ensure the background covers the entire header */
+    background-image: url("/Images/header.png"); /* Replace with the correct path */
+    background-size: cover; /* Ensure the image covers the entire header */
     background-position: center; /* Center the image */
     background-color: #333; /* Fallback background color */
     min-height: 100px; /* Ensure minimum height, adjust as needed */
@@ -19,7 +17,6 @@ header {
     padding: 40px 10%; /* Add top and bottom padding with side responsiveness */
     text-align: center; /* Center align text */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Optional text shadow for readability */
-    font-family: Arial, sans-serif; /* Set a clean font */
 }
 
 /* Media query for screens larger than 768px (laptop/tablet and up) */
