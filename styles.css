@@ -9,10 +9,10 @@ body {
 
 /* Header Styling */
 header {
-    background-image: linear-gradient(to right, rgba(255, 0, 0, 0.5), rgba(255, 255, 0, 0.5), rgba(0, 128, 0, 0.5)), url("/Images/header.png"); /* Replace with the path to your image */
+    background-image: url("/Images/header.png"), linear-gradient(to right, #FF0000, #FFFF00, #008000); /* Rasta gradient as the base layer */
     background-size: cover; /* Ensure the image covers the entire header */
     background-position: center; /* Center the image */
-    background-color: linear-gradient  (to right, rgba(255, 0, 0, 0.5), rgba(255, 255, 0, 0.5), rgba(0, 128, 0, 0.5)), url("/Images/header.png");
+    background-image: url("/Images/header.png"), linear-gradient(to right, #FF0000, #FFFF00, #008000); /* Rasta gradient as the base layer */
     color: white; /* Set text color to white */
     padding: 40px 0; /* Add padding to the top and bottom of the header */
 }
@@ -21,10 +21,10 @@ header {
 @media (min-width: 768px) {
     /* Set the background image for laptops and larger screens */
     header {
-        background-image: linear-gradient(to right, rgba(255, 0, 0, 0.5), rgba(255, 255, 0, 0.5), rgba(0, 128, 0, 0.5)), url("/Images/header_2.png"); /* Replace with the path to your image */
+        background-image: url("/Images/header_2.png"), linear-gradient(to right, #FF0000, #FFFF00, #008000); /* Rasta gradient as the base layer */
         background-size: cover;
         background-position: center;
-        background-color: linear-gradient  (to right, rgba(255, 0, 0, 0.5), rgba(255, 255, 0, 0.5), rgba(0, 128, 0, 0.5)), url("/Images/header_2.png");
+        background-image: url("/Images/header_2.png"), linear-gradient(to right, #FF0000, #FFFF00, #008000); /* Rasta gradient as the base layer */
         height: 25px;
         padding: 40px;
     }
