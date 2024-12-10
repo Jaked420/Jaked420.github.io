@@ -222,6 +222,7 @@ footer p {
 @media (max-width: 768px) {
     .cart-sidebar {
         width: 100%; /* Make the sidebar full width on smaller screens */
+        display: none;
     }
 }
 
