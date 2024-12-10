@@ -8,7 +8,7 @@ body {
 
 /* Header Styling */
 header {
-    background-image: url("/home/linux/Documents/Jaked420.github.io-main/Images/header.png"); /* Replace with the path to your image */
+    background-image: url("/Images/header.png"); /* Replace with the path to your image */
     background-size: cover; /* Ensure the image covers the entire header */
     background-position: center; /* Center the image */
     background-color: #333; /* Set background color for the header */
