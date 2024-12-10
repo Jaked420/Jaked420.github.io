@@ -142,7 +142,7 @@ nav ul li a:hover {
     text-align: center; /* Center-align the links */
 }
 /* Make it sticky only for screens smaller than 768px */
-(max-width: 768px) {
+@media (max-width: 768px) {
     #navbar {
         position: sticky;
         top: 0; /* Position at the top of the viewport */
