@@ -57,8 +57,8 @@ header {
 }
 
 .cart-icon {
-    width: 40px; /* Set the width of the cart icon */
-    height: 40px; /* Set the height of the cart icon */
+    width: 30px; /* Set the width of the cart icon */
+    height: 30px; /* Set the height of the cart icon */
 }
 /* Hide the laptop header on mobile */
 .laptop-header {
