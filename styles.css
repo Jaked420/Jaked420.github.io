@@ -9,7 +9,9 @@ body {
 
 /* Header Styling */
 header {
-    background-image: url("/Images/header.png"); /* Replace with the path to your image */
+    background-image: 
+    linear-gradient(to right, rgba(255, 0, 0, 0.7), rgba(255, 255, 0, 0.7), rgba(0, 128, 0, 0.7)), 
+    url("/Images/header.png");
     background-size: cover; /* Ensure the image covers the entire header */
     background-position: center; /* Center the image */
     background-color: #000000; /* Set background color for the header */
@@ -51,16 +53,6 @@ header {
     align-items: center; /* Vertically center the items */
 }
 
-.cart-btn {
-    background-color: transparent; /* Make the button background transparent */
-    border: none; /* Remove any border from the button */
-    cursor: pointer; /* Show a pointer cursor when hovering over the button */
-}
-
-.cart-icon {
-    width: 30px; /* Set the width of the cart icon */
-    height: 30px; /* Set the height of the cart icon */
-}
 /* Hide the laptop header on mobile */
 .laptop-header {
     display: none;
