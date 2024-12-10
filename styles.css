@@ -10,13 +10,19 @@ body {
 header {
     background-image: url("/Images/header.png"); /* Replace with the path to your image */
     background-size: cover; /* Ensure the image covers the entire header */
-    background-position: left; /* Center the image */
+    background-position: center; /* Center the image */
     background-color: #333; /* Set background color for the header */
     height: 25px;
     color: white; /* Set text color to white */
     padding: 40px 0; /* Add padding to the top and bottom of the header */
 }
-
+/* Media query for screens larger than 768px (laptop/tablet and up) */
+@media (min-width: 768px) {
+    /* Set the background image for laptops and larger screens */
+    header {
+        background-image: url("/Images/header_2.png"); /* Path to the laptop header image */
+    }
+}
 .header-container {
     display: flex; /* Use flexbox for alignment */
     justify-content: space-between; /* Space out the items in the header */
@@ -49,7 +55,27 @@ header {
     width: 24px; /* Set the width of the cart icon */
     height: 24px; /* Set the height of the cart icon */
 }
+/* Hide the laptop header on mobile */
+.laptop-header {
+    display: none;
+}
 
+/* Show the mobile header by default */
+.mobile-header {
+    display: block;
+}
+
+/* Media query for screens larger than 768px (laptop/tablet and up) */
+@media (min-width: 768px) {
+    /* Show the laptop header and hide the mobile header */
+    .laptop-header {
+        display: block;
+    }
+
+    .mobile-header {
+        display: none;
+    }
+}
 /* Navigation Styling */
 nav {
     background-color: #222; /* Set the background color of the navigation bar */
