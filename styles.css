@@ -4,7 +4,7 @@ body {
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
     background-color: #f4f4f4; /* Set a light gray background color for the page */
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
 /* Header Styling */
@@ -12,9 +12,9 @@ header {
     background-image: url("/Images/header.png"); /* Replace with the path to your image */
     background-size: cover; /* Ensure the image covers the entire header */
     background-position: center; /* Center the image */
-    background-color: linear-gradient(to right, rgba(255, 0, 0, 0.7), rgba(255, 255, 0, 0.7), rgba(0, 128, 0, 0.7)),
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.7), rgba(255, 255, 0, 0.7), rgba(0, 128, 0, 0.7)), url("/Images/header.png"); /* Add a gradient overlay and image */
     color: white; /* Set text color to white */
-    padding: 40px 0; /* Add padding to the top and bottom of the header *
+    padding: 40px 0; /* Add padding to the top and bottom of the header */
 }
 
 /* Media query for screens larger than 768px (laptop/tablet and up) */
@@ -116,33 +116,33 @@ nav ul li a:hover {
         color: white; /* Set the hamburger icon color to white */
         cursor: pointer; /* Make the icon clickable */
     }
+}
+.nav-links {
+    display: none; /* Hide the navigation links by default */
+    flex-direction: column; /* Stack the links vertically */
+    background-color: #000000; /* Set a dark background color for the mobile menu */
+    position: absolute; /* Position the menu absolutely */
+    top: 40px; /* Position the menu just below the header */
+    right: 10px; /* Align the menu to the right */
+    width: 200px; /* Set a fixed width for the menu */
+    padding: 20px; /* Add padding to the menu */
+    border-radius: 5px; /* Round the corners of the menu */
+}
 
-    .nav-links {
-        display: none; /* Hide the navigation links by default */
-        flex-direction: column; /* Stack the links vertically */
-        background-color: #000000; /* Set a dark background color for the mobile menu */
-        position: absolute; /* Position the menu absolutely */
-        top: 40px; /* Position the menu just below the header */
-        right: 10px; /* Align the menu to the right */
-        width: 200px; /* Set a fixed width for the menu */
-        padding: 20px; /* Add padding to the menu */
-        border-radius: 5px; /* Round the corners of the menu */
-    }
+.nav-links.active {
+    display: flex; /* Display the navigation links when the "active" class is added */
+}
 
-    .nav-links.active {
-        display: flex; /* Display the navigation links when the "active" class is added */
-    }
+.nav-links li {
+    margin: 10px 0; /* Add margin between the list items */
+}
 
-    .nav-links li {
-        margin: 10px 0; /* Add margin between the list items */
-    }
-
-    .nav-links li a {
-        font-size: 18px; /* Set the font size for mobile navigation links */
-        text-align: center; /* Center-align the links */
-    }
-    /* Make it sticky only for screens smaller than 768px */
-@media (max-width: 768px) {
+.nav-links li a {
+    font-size: 18px; /* Set the font size for mobile navigation links */
+    text-align: center; /* Center-align the links */
+}
+/* Make it sticky only for screens smaller than 768px */
+(max-width: 768px) {
     #navbar {
         position: sticky;
         top: 0; /* Position at the top of the viewport */
@@ -216,8 +216,6 @@ footer p {
 .cart-sidebar.visible {
     display: flex !important; /* Show the sidebar when it has the "visible" class */
 }
-
-
 
 .close-btn {
     background: none; /* Remove the background from the close button */
