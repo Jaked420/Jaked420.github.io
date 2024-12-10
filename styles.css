@@ -46,7 +46,16 @@ header {
     text-transform: uppercase; /* Convert the title to uppercase */
     letter-spacing: 2px; /* Add spacing between letters */
 }
+.cart-btn {
+    background-color: transparent; /* Make the button background transparent */
+    border: none; /* Remove any border from the button */
+    cursor: pointer; /* Show a pointer cursor when hovering over the button */
+}
 
+.cart-icon {
+    width: 24px; /* Set the width of the cart icon */
+    height: 24px; /* Set the height of the cart icon */
+}
 .header-actions {
     display: flex; /* Use flexbox to align cart button and other actions */
     align-items: center; /* Vertically center the items */
