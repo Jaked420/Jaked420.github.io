@@ -4,6 +4,7 @@ body {
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
     background-color: #f4f4f4; /* Set a light gray background color for the page */
+    overflow-x: hidden; 
 }
 
 /* Header Styling */
@@ -205,7 +206,7 @@ footer p {
     right: 0; /* Align it to the right */
     top: 0; /* Align it to the top */
     background-color: white; /* Set the sidebar background to white */
-    width: 100%; /* Set a fixed width for the sidebar */
+    width: 300px; /* Set a fixed width for the sidebar */
     height: 100%; /* Make the sidebar full height */
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow on the left side */
     display: none; /* Hide the sidebar by default */
@@ -215,7 +216,12 @@ footer p {
 }
 
 .cart-sidebar.visible {
-    display: float; /* Show the sidebar when it has the "visible" class */
+    display: flex !important; /* Show the sidebar when it has the "visible" class */
+}
+@media (max-width: 768px) {
+    .cart-sidebar {
+        width: 100%; /* Full-screen sidebar on smaller devices */
+    }
 }
 
 .close-btn {
