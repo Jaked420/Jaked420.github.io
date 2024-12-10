@@ -219,8 +219,7 @@ footer p {
     display: flex !important; /* Show the sidebar when it has the "visible" class */
 }
 @media (max-width: 768px) {
-    .cart-sidebar {
-        width: 100%; /* Full-screen sidebar on smaller devices */
+    .cart-sidebar {       
         position: fixed; /* Fix the sidebar to the right side of the screen */
         right: 0; /* Align it to the right */
         top: 0; /* Align it to the top */
