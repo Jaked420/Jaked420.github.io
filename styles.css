@@ -219,7 +219,7 @@ footer p {
     display: flex; /* Show the sidebar when it has the "visible" class */
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .cart-sidebar {
         width: 100%; /* Make the sidebar full width on smaller screens */
         display: none;
