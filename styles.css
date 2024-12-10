@@ -51,14 +51,14 @@ header {
 }
 
 .cart-btn {
-    background-color: #333; /* Make the button background transparent */
+    background-color: #ffffff; /* Make the button background transparent */
     border: none; /* Remove any border from the button */
     cursor: pointer; /* Show a pointer cursor when hovering over the button */
 }
 
 .cart-icon {
-    width: 24px; /* Set the width of the cart icon */
-    height: 24px; /* Set the height of the cart icon */
+    width: 48px; /* Set the width of the cart icon */
+    height: 48px; /* Set the height of the cart icon */
 }
 /* Hide the laptop header on mobile */
 .laptop-header {
