@@ -120,7 +120,7 @@ nav ul li a:hover {
     .nav-links {
         display: flex; /* Show the navigation links in a row */
         flex-direction: row; /* Align links horizontally */
-        position: static; /* Reset position to avoid mobile-specific styles */
+        position: center; /* Reset position to avoid mobile-specific styles */
         width: auto; /* Reset width for desktop view */
         background-color: transparent; /* Remove background color */
         padding: 0; /* Remove padding */
