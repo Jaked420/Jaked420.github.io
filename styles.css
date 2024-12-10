@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif; /* Set the default font for the page */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
-    background-color: red; /* Set a light gray background color for the page */
+    background-color: white; /* Set a light gray background color for the page */
     overflow-x: hidden;
 }
 
@@ -83,7 +83,7 @@ header {
 }
 /* Navigation Styling */
 nav {
-    background-color: #222; /* Set the background color of the navigation bar */
+    background-color: #610f0f; /* Set the background color of the navigation bar */
     text-align: center; /* Center the navigation links */
 }
 
