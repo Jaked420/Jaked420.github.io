@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif; /* Set the default font for the page */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
-    background-color: #f4f4f4; /* Set a light gray background color for the page */
+    background-color: linear-gradient(to right, rgba(255, 0, 0, 0.7), rgba(255, 255, 0, 0.7), rgba(0, 128, 0, 0.7)); /* Set a light gray background color for the page */
     overflow-x: hidden;
 }
 
