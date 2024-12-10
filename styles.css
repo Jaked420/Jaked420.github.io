@@ -8,15 +8,13 @@ body {
 
 /* Header Styling */
 header {
-    background-image: url("/Images/header.png"); /* Replace with the correct path */
+    background-image: url("/Images/header.png"); /* Replace with the path to your image */
     background-size: cover; /* Ensure the image covers the entire header */
     background-position: center; /* Center the image */
-    background-color: #333; /* Fallback background color */
-    min-height: 100px; /* Ensure minimum height, adjust as needed */
-    color: white; /* Set text color to white for better readability */
-    padding: 40px 10%; /* Add top and bottom padding with side responsiveness */
-    text-align: center; /* Center align text */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Optional text shadow for readability */
+    background-color: #333; /* Set background color for the header */
+    height: 25px;
+    color: white; /* Set text color to white */
+    padding: 40px 0; /* Add padding to the top and bottom of the header */
 }
 
 /* Media query for screens larger than 768px (laptop/tablet and up) */
