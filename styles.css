@@ -153,7 +153,7 @@ nav ul li a:hover {
 /* Main Content Styling */
 main {
     padding: 20px; /* Add padding to the main content area */
-    max-width: 1200px; /* Set maximum width for the content */
+    max-width: auto; /* Set maximum width for the content */
     margin: 0 auto; /* Center the content on the page */
 }
 
@@ -166,7 +166,7 @@ main {
 
 #featured .featured-image,
 #second-image-section img {
-    max-width: 80%; /* Set a maximum width of 80% for the images */
+    max-width: auto; /* Set a maximum width of 80% for the images */
     height: auto; /* Ensure the image maintains its aspect ratio */
 }
 
