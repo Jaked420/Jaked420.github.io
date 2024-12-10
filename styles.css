@@ -216,13 +216,21 @@ footer p {
 }
 
 .cart-sidebar.visible {
-    display: flex; /* Show the sidebar when it has the "visible" class */
+    display: flex !important; /* Show the sidebar when it has the "visible" class */
 }
-
-@media (min-width: 768px) {
-    .cart-sidebar {
-        width: 100%; /* Make the sidebar full width on smaller screens */
-        display: none;
+@media (max-width: 768px) {
+    .cart-sidebar {       
+        position: fixed; /* Fix the sidebar to the right side of the screen */
+        right: 0; /* Align it to the right */
+        top: 0; /* Align it to the top */
+        background-color: white; /* Set the sidebar background to white */
+        width: 300px; /* Set a fixed width for the sidebar */
+        height: 100%; /* Make the sidebar full height */
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow on the left side */
+        display: none; /* Hide the sidebar by default */
+        flex-direction: column; /* Stack items vertically inside the sidebar */
+        padding: 20px; /* Add padding inside the sidebar */
+        z-index: 1000; /* Ensure the sidebar appears above other content */
     }
 }
 
