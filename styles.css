@@ -157,19 +157,6 @@ main {
     margin: 0 auto; /* Center the content on the page */
 }
 
-/* Featured Image Section */
-#featured .image-container,
-#second-image-section .image-container {
-    text-align: center; /* Center the featured image */
-    margin-top: 20px; /* Add top margin */
-}
-
-#featured .featured-image,
-#second-image-section img {
-    max-width: auto; /* Set a maximum width of 80% for the images */
-    height: auto; /* Ensure the image maintains its aspect ratio */
-}
-
 /* About Section Styling */
 #about {
     margin-top: 40px; /* Add margin to the top of the About section */
@@ -214,7 +201,7 @@ footer p {
 
 /* Shopping Cart Sidebar */
 .cart-sidebar {
-    position: fixed; /* Fix the sidebar to the right side of the screen */
+    position: absolute; /* Fix the sidebar to the right side of the screen */
     right: 0; /* Align it to the right */
     top: 0; /* Align it to the top */
     background-color: white; /* Set the sidebar background to white */
