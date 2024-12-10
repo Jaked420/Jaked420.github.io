@@ -205,7 +205,7 @@ footer p {
     right: 0; /* Align it to the right */
     top: 0; /* Align it to the top */
     background-color: white; /* Set the sidebar background to white */
-    width: 100px; /* Set a fixed width for the sidebar */
+    width: 100%; /* Set a fixed width for the sidebar */
     height: 100%; /* Make the sidebar full height */
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow on the left side */
     display: none; /* Hide the sidebar by default */
@@ -215,7 +215,7 @@ footer p {
 }
 
 .cart-sidebar.visible {
-    display: flex; /* Show the sidebar when it has the "visible" class */
+    display: float; /* Show the sidebar when it has the "visible" class */
 }
 
 .close-btn {
