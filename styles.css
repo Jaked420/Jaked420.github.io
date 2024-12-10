@@ -21,6 +21,10 @@ header {
     /* Set the background image for laptops and larger screens */
     header {
         background-image: url("/Images/header_2.png"); /* Path to the laptop header image */
+        background-size: cover;
+        background-position: center;
+        height: 25px;
+        padding: 40px;
     }
 }
 .header-container {
@@ -78,7 +82,7 @@ header {
 }
 /* Navigation Styling */
 nav {
-    background-color: #222; /* Set the background color of the navigation bar */
+    background-color: #000000; /* Set the background color of the navigation bar */
     text-align: center; /* Center the navigation links */
 }
 
@@ -116,9 +120,9 @@ nav ul li a:hover {
     .nav-links {
         display: none; /* Hide the navigation links by default */
         flex-direction: column; /* Stack the links vertically */
-        background-color: #333; /* Set a dark background color for the mobile menu */
+        background-color: #000000; /* Set a dark background color for the mobile menu */
         position: absolute; /* Position the menu absolutely */
-        top: 60px; /* Position the menu just below the header */
+        top: 130px; /* Position the menu just below the header */
         right: 10px; /* Align the menu to the right */
         width: 200px; /* Set a fixed width for the menu */
         padding: 20px; /* Add padding to the menu */
@@ -137,6 +141,14 @@ nav ul li a:hover {
         font-size: 18px; /* Set the font size for mobile navigation links */
         text-align: center; /* Center-align the links */
     }
+    /* Make it sticky only for screens smaller than 768px */
+@media (max-width: 768px) {
+    #navbar {
+        position: sticky;
+        top: 0; /* Position at the top of the viewport */
+        z-index: 999; /* Ensures it stays above other content */
+    }
+}
 }
 
 /* Main Content Styling */
