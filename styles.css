@@ -119,7 +119,7 @@ nav ul li a:hover {
     }
 }
 .nav-links {
-    display: none; /* Hide the navigation links by default */
+    display: center; /* Hide the navigation links by default */
     flex-direction: column; /* Stack the links vertically */
     background-color: #000000; /* Set a dark background color for the mobile menu */
     position: absolute; /* Position the menu absolutely */
