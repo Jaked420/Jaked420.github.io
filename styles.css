@@ -110,7 +110,7 @@ nav ul li a:hover {
 }
 
 /* Mobile Navigation (Hamburger) */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .hamburger {
         display: block; /* Display the hamburger icon on smaller screens */
         font-size: 30px; /* Set the font size of the hamburger icon */
