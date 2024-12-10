@@ -201,7 +201,7 @@ footer p {
 
 /* Shopping Cart Sidebar */
 .cart-sidebar {
-    position: absolute; /* Fix the sidebar to the right side of the screen */
+    position: relative; /* Fix the sidebar to the right side of the screen */
     right: 0; /* Align it to the right */
     top: 0; /* Align it to the top */
     background-color: white; /* Set the sidebar background to white */
