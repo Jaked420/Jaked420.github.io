@@ -83,7 +83,7 @@ header {
 }
 /* Navigation Styling */
 nav {
-    background-color: #610f0f; /* Set the background color of the navigation bar */
+    background: linear-gradient(to right, #ff0000, #ffff00, #008000); /* Gradient
     text-align: center; /* Center the navigation links */
 }
 
