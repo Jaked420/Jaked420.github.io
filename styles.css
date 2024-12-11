@@ -106,7 +106,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ff6347; /* Change the color to orange on hover */
+    color: #35f32e; /* Change the color to orange on hover */
 }
 
 /* Mobile Navigation (Hamburger) */
@@ -121,7 +121,7 @@ nav ul li a:hover {
     .nav-links {
         display: none; /* Hide the navigation links by default */
         flex-direction: column; /* Stack the links vertically */
-        background-color: #333; /* Set a dark background color for the mobile menu */
+        background-color: linear-gradient(to right, #ff0000, #ffff00, #008000); /* Gradient; /* Set a dark background color for the mobile menu */
         position: absolute; /* Position the menu absolutely */
         top: 60px; /* Position the menu just below the header */
         right: 10px; /* Align the menu to the right */
