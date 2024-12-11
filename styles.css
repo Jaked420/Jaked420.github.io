@@ -182,12 +182,13 @@ nav ul li a:hover {
         flex-direction: column; /* Stack the links vertically */
         background-color: #000000; /* Set a dark background color for the mobile menu */
         position: absolute; /* Position the menu absolutely */
-        top: 42px; /* Position the menu just below the header */
+        top: 45px; /* Position the menu just below the header */
         right: auto; /* Align the menu to the right */
         left: auto;
-        width: 100%; /* Set a fixed width for the menu */
+        width: auto; /* Set a fixed width for the menu */
         padding: 20px; /* Add padding to the menu */       
         align-items: center;
+        overflow-x: hidden;
     }
 
     .nav-links.active {
