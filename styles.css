@@ -124,7 +124,7 @@ nav ul li a:hover {
         background: linear-gradient(to right, #ff0000, #ffff00, #008000); /* Apply gradient background */
         position: absolute; /* Position the menu absolutely */
         top: 63px; /* Position the menu just below the header */
-        right: 0px; /* Align the menu to the right */
+        right: 100%; /* Align the menu to the right */
         width: 100%; /* Set a fixed width for the menu */
         padding: 20px; /* Add padding to the menu */
         border-radius: 5px; /* Round the corners of the menu */
