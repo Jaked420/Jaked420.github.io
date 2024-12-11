@@ -184,7 +184,7 @@ nav ul li a:hover {
         position: absolute; /* Position the menu absolutely */
         top: 42px; /* Position the menu just below the header */
         right: 10px; /* Align the menu to the right */
-        width: fit-content; /* Set a fixed width for the menu */
+        width: 100%; /* Set a fixed width for the menu */
         padding: 20px; /* Add padding to the menu */
         border-radius: 5px; /* Round the corners of the menu */
     }
