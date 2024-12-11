@@ -121,7 +121,7 @@ nav ul li a:hover {
     .nav-links {
         display: none; /* Hide the navigation links by default */
         flex-direction: column; /* Stack the links vertically */
-        background-color: linear-gradient(to right, #ff0000, #ffff00, #008000); /* Gradient; /* Set a dark background color for the mobile menu */
+        background: linear-gradient(to right, #ff0000, #ffff00, #008000); /* Apply gradient background */
         position: absolute; /* Position the menu absolutely */
         top: 60px; /* Position the menu just below the header */
         right: 10px; /* Align the menu to the right */
