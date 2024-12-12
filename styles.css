@@ -85,7 +85,7 @@ header {
     }
 }
 
-/*-----/*
+/*--navigation---/*
 
 /* General Styles for the Navigation */
 nav {
@@ -196,7 +196,25 @@ nav {
     }
 }
 
-/*-----/*
+/*--nav-fix---/*
+
+/* Reset body and html margins/padding */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Ensure the body takes full height */
+}
+
+/* Set no margin or padding on the body */
+body {
+    margin: 0;
+    padding: 0;
 
 /* Main Content Styling */
 main {
