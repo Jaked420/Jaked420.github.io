@@ -1,11 +1,11 @@
 /* General Styling */
 body {
     font-family: Arial, sans-serif; /* Set the default font for the page */
-    margin: 0; /* Remove default margin */
-    height: 100%; /* Ensure the body takes full height */
+    margin: 0px; /* Remove default margin */    
     padding: 0; /* Remove default padding */
     background-color: white; /* Set a light gray background color for the page */
     overflow-x: hidden;
+    height: 100%; /* Ensure the body takes full height */
     box-sizing: border-box;
 }
 
