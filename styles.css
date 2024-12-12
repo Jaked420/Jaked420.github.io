@@ -158,7 +158,7 @@ nav ul li a:hover, nav ul li a:focus {
     left: 0;
     width: 100%;
     height: 100vh; /* Full height */
-    padding-top: 80px; /* Space for header and hamburger icon */
+    padding-top: 0px; /* Space for header and hamburger icon */
     align-items: center; /* Center links horizontally */
     justify-content: flex-start; /* Align items to the top (start) */
     overflow-y: auto; /* Allow scrolling if needed */
