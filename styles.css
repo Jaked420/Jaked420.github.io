@@ -117,7 +117,7 @@ nav {
 }
 
 /* Mobile and Laptop Layout - Show hamburger menu */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     /* Show hamburger menu on smaller screens (mobile/tablet) */
     .hamburger {
         display: block; /* Displays the hamburger icon */
