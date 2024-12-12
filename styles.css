@@ -143,7 +143,7 @@ nav ul li a:hover {
         text-align: center; /* Center-align the links */
     }
 }
-    .navbar {
+    #navbar {
     position: sticky;
     top: 0; /* Position at the top of the viewport */
 }
@@ -162,7 +162,7 @@ nav ul li a:hover {
         display: flex; /* Show the navigation links in a row */
         flex-direction: row; /* Align links horizontally */
         position: center; /* Reset position to avoid mobile-specific styles */
-        width: auto; /* Reset width for desktop view */
+        width: fit-content; /* Reset width for desktop view */
         background-color: transparent; /* Remove background color */
         padding: 0; /* Remove padding */
     }
