@@ -94,7 +94,7 @@ header {
     }
 }
 
-/*--navigation----------------------------------------------------------------------------/*
+/*-- Navigation --*/
 
 /* General Styles for the Navigation */
 nav {
@@ -112,7 +112,7 @@ nav {
     font-size: 30px; /* Sets the hamburger icon size */
     color: #000; /* Icon color */
     cursor: pointer; /* Cursor pointer on hover */
-    z-index: 1100; /* Ensures it stays on top of other elements */
+    z-index: 1101; /* Ensures it stays on top of other elements */
     position: fixed; /* Fixes the position relative to the viewport */
     top: 20px; /* 20px from the top of the viewport */
     left: 20px; /* 20px from the left of the viewport */
@@ -142,6 +142,7 @@ nav {
         overflow-y: auto; /* Allows vertical scrolling if needed */
         transform: translateX(-100%); /* Initially hides the menu off-screen */
         transition: transform 0.3s ease; /* Smooth transition effect when sliding the menu in and out */
+        z-index: 1000; /* Set the z-index of the mobile menu to appear below the hamburger icon */
     }
 
     /* When the menu is active, show it */
@@ -205,8 +206,6 @@ nav {
     }
 }
 
-/*--nav-fix---/*
-
 /* Reset body and html margins/padding */
 *,
 *::before,
@@ -224,8 +223,7 @@ html, body {
 body {
     margin: 0;
     padding: 0;
-
-
+}
 
 /* About Section Styling--------------------------------------------------------------------- */
 #about {
