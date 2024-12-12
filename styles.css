@@ -84,6 +84,58 @@ header {
     }
 }
 
+/* General Styles for the Navigation */
+nav {
+    background: linear-gradient(to right, #ff0000, #ffff00, #008000); /* Gradient background */
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for floating effect */
+    position: relative;
+    width: 100%;
+    z-index: 1000; /* Ensure navbar stays on top */
+}
+
+/* List Styles for Navigation */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Use flexbox for the links */
+    justify-content: center; /* Center the links horizontally */
+}
+
+/* Navigation Item Styles */
+nav ul li {
+    margin: 0 20px; /* Space between items */
+}
+
+/* Link Styling */
+nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    padding: 8px 15px;
+}
+
+/* Hover and Focus Effects for Links */
+nav ul li a:hover, nav ul li a:focus {
+    color: #ffcc00; /* Highlight color on hover/focus */
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Hamburger Icon - Hidden by default */
+.hamburger {
+    display: none; /* Hidden by default */
+    font-size: 30px;
+    color: #000;
+    cursor: pointer;
+    z-index: 1100; /* Ensure it stays above the menu */
+    position: fixed;
+    top: 20px;
+    left: 20px; /* Position it at the top-left */
+}
+
 /* Mobile and Laptop Layout - Make hamburger menu visible */
 @media (max-width: 1024px) {
     /* Show hamburger menu on mobile and laptop screens */
@@ -100,18 +152,17 @@ header {
     .nav-links {
         display: none; /* Hide menu by default */
         flex-direction: column; /* Stack links vertically */
-        background: linear-gradient(to right, #ff0000, #ffff00, #008000); /* Gradient background */
+        background: linear-gradient(to right, #ff0000, #ffff00, #008000);
         position: fixed; /* Fix the menu to the top of the screen */
         top: 0;
         left: 0;
         width: 100%;
         height: 100vh; /* Full height */
-        padding-top: 0px; /* Space for header and hamburger icon */
-        align-items: center; /* Center links horizontally */
-        justify-content: flex-start; /* Align items to the top (start) */
+        padding-top: 80px; /* Space for header and hamburger icon */
+        align-items: center; /* Center links */
         overflow-y: auto; /* Allow scrolling if needed */
         transform: translateX(-100%); /* Initially hide off-screen */
-        transition: transform 0.5s ease; /* Smooth sliding effect */
+        transition: transform 0.3s ease; /* Smooth sliding effect */
     }
 
     /* When active, show the menu */
@@ -129,7 +180,7 @@ header {
     /* Link Styling for Mobile */
     .nav-links li a {
         font-size: 24px;
-        color: #000000;
+        color: #fff;
         text-align: center;
         padding: 15px 20px;
         width: 100%; /* Full width for easy tapping */
@@ -138,12 +189,12 @@ header {
     /* Hover Effects for Mobile Links */
     .nav-links li a:hover, .nav-links li a:focus {
         background-color: rgba(255, 255, 255, 0.2); /* Background on hover/focus */
-        color: #31c91d;
+        color: #ffcc00;
     }
 }
 
 /* Desktop Layout (Above 1024px) */
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
     /* Hide regular navbar for larger screens */
     nav ul {
         display: none;
@@ -209,6 +260,7 @@ header {
         font-size: 20px; /* Larger text for larger screens */
     }
 }
+
 
 
 /* Main Content Styling */
