@@ -132,12 +132,13 @@ nav ul li a:hover {
     .nav-links {
         display: none; /* Hide the navigation links by default */
         flex-direction: column; /* Stack the links vertically */
-        background-color: #000000; /* Set dark background color for mobile */
+        background: linear-gradient(to right, #ff0000, #ffff00, #008000); /* Apply gradient background */
         position: absolute; /* Position the menu absolutely */
-        top: 45px; /* Position just below the header */
+        top: 50px; /* Position just below the header */
         left: 0; /* Align to the left */
-        width: 100%; /* Full width of the screen */
-        padding: 20px; /* Padding inside the menu */
+        width: 100%; /* Set the width to full screen */
+        height: calc(100vh - 50px); /* Make the menu height fit the screen (minus header) */
+        padding: 20px; /* Add padding to the menu */
         align-items: center; /* Center the links inside the menu */
         overflow-x: hidden; /* Hide horizontal overflow */
     }
@@ -180,6 +181,7 @@ nav ul li a:hover {
     }
 }
 
+/*------------------------------------------------------------------------------------------------------
 
 /* Main Content Styling */
 main {
