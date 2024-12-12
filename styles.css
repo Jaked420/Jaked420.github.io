@@ -109,12 +109,16 @@ nav ul li a:hover {
     color: #35f32e; /* Change the color to orange on hover */
 }
 
+#navbar {
+    position: sticky;
+    top: 0; /* Position at the top of the viewport */
+}
 /* Mobile Navigation (Hamburger) */
 @media (max-width: 767px) {
     .hamburger {
         display: block; /* Display the hamburger icon on smaller screens */
         font-size: 30px; /* Set the font size of the hamburger icon */
-        color: white; /* Set the hamburger icon color to white */
+        color: #000000; /* Set the hamburger icon color to white */
         cursor: pointer; /* Make the icon clickable */
     }
 
@@ -123,7 +127,7 @@ nav ul li a:hover {
         flex-direction: column; /* Stack the links vertically */
         background: linear-gradient(to right, #ff0000, #ffff00, #008000); /* Apply gradient background */
         position: absolute; /* Position the menu absolutely */
-        top: 63px; /* Position the menu just below the header */
+        top: 61px; /* Position the menu just below the header */
         right: 100%; /* Align the menu to the right */
         width: 100%; /* Set a fixed width for the menu */
         padding: 20px; /* Add padding to the menu */
@@ -142,11 +146,7 @@ nav ul li a:hover {
         font-size: 18px; /* Set the font size for mobile navigation links */
         text-align: center; /* Center-align the links */
     }
-}
-    #navbar {
-    position: sticky;
-    top: 0; /* Position at the top of the viewport */
-}
+}    
 
 nav ul li a:hover {
     color: #ffcc00; /* Change the color to orange on hover */
