@@ -159,7 +159,7 @@ nav ul li a:hover, nav ul li a:focus {
         overflow-y: auto; /* Scrollable menu if needed */
         transform: translateX(-100%); /* Initially hide off-screen */
         transition: transform 0.3s ease; /* Smooth sliding effect */
-        overflow-x: hidden;
+        
     }
 
     .nav-links.active {
