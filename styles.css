@@ -143,6 +143,10 @@ nav ul li a:hover {
         text-align: center; /* Center-align the links */
     }
 }
+    .navbar {
+    position: sticky;
+    top: 0; /* Position at the top of the viewport */
+}
 
 nav ul li a:hover {
     color: #ffcc00; /* Change the color to orange on hover */
@@ -185,7 +189,7 @@ nav ul li a:hover {
         top: 45px; /* Position the menu just below the header */
         right: auto; /* Align the menu to the right */
         left: auto;
-        width: auto; /* Set a fixed width for the menu */
+        width: 100%; /* Set a fixed width for the menu */
         padding: 20px; /* Add padding to the menu */       
         align-items: center;
         overflow-x: hidden;
@@ -234,7 +238,7 @@ main {
 
 #about p {
     font-size: 18px; /* Set the font size for the paragraph text */
-    color: #555; /* Set a darker color for the paragraph text */
+    color: #000000; /* Set a darker color for the paragraph text */
 }
 
 /* Footer Styling */
