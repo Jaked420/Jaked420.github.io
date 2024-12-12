@@ -198,12 +198,12 @@ nav ul li a:hover, nav ul li a:focus {
 @media (min-width: 1025px) {
     /* Hide regular navbar for larger screens */
     nav ul {
-        display: none;
+        display: block;
     }
 
     /* Show hamburger menu for larger screens (optional, but you can keep it consistent) */
     .hamburger {
-        display: block;
+        display: none;
     }
 
     /* Use full-screen navbar behavior like mobile for desktops */
