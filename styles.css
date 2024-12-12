@@ -176,7 +176,7 @@ nav {
         overflow-y: auto; /* Allow vertical scrolling if needed */
         transform: translateX(-100%); /* Initially hidden */
         transition: transform 0.3s ease; /* Smooth transition */
-        z-index: 999; /* Ensure the menu is below the header */
+        z-index: 1000; /* Ensure the menu is below the header */
     }
 
     .nav-links.active {
