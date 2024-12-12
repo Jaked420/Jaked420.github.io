@@ -99,14 +99,14 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white; /* Set the text color of the links to white */
+    color: #000000; /* Set the text color of the links to white */
     text-decoration: none; /* Remove the underline from the links */
     font-size: 18px; /* Set the font size of the links */
     transition: color 0.3s ease-in-out; /* Add a smooth transition effect for color changes */
 }
 
 nav ul li a:hover {
-    color: #35f32e; /* Change the color to orange on hover */
+    color: #d36d6d; /* Change the color to orange on hover */
 }
 
 #navbar {
@@ -129,7 +129,7 @@ nav ul li a:hover {
         position: absolute; /* Position the menu absolutely */
         top: 61px; /* Position the menu just below the header */
         right: 100%; /* Align the menu to the right */
-        width: 100%; /* Set a fixed width for the menu */
+        width: auto; /* Set a fixed width for the menu */
         padding: 20px; /* Add padding to the menu */
         border-radius: 5px; /* Round the corners of the menu */
     }
