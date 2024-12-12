@@ -24,7 +24,7 @@ header {
     color: white;
     padding: 40px 0; /* Add padding to the top and bottom of the header */
     height: auto; /* Let the height be controlled by the padding */
-    z-index: 1100;
+    z-index: 1101;
 
 }
 
