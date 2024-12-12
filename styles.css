@@ -161,7 +161,6 @@ nav ul li a:hover, nav ul li a:focus {
     .nav-links.active {
         display: flex; /* Show the menu when active */
         transform: translateX(0); /* Slide in the menu */
-        overflow-x: hidden;
     }
 
     .nav-links li {
