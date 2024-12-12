@@ -11,26 +11,25 @@ body {
 
 /* Header Styling */
 header {
-    background-image: url("/Images/header.png"), linear-gradient(to right, #ff0000, #ffff00, #008000); /* Rasta gradient as the base layer */
-    background-size: cover; /* Ensure the image covers the entire header */
-    background-position: center; /* Center the image */
-    background-image: url("/Images/header.png"), linear-gradient(to right, #ff0000, #ffff00, #008000); /* Rasta gradient as the base layer */
-    color: white; /* Set text color to white */
+    background-image: url("/Images/header.png"), linear-gradient(to right, #ff0000, #ffff00, #008000); 
+    background-size: cover; 
+    background-position: center; 
+    color: white; 
     padding: 40px 0; /* Add padding to the top and bottom of the header */
+    height: auto; /* Let the height be controlled by the padding */
 }
 
-/* Media query for screens larger than 768px (laptop/tablet and up) */
+/* Media query for larger screens */
 @media (min-width: 768px) {
-    /* Set the background image for laptops and larger screens */
+    /* Adjust header background and padding for larger screens */
     header {
-        background-image: url("/Images/header_2.png"), linear-gradient(to right, #ff0000, #ffff00, #008000); /* Rasta gradient as the base layer */
+        background-image: url("/Images/header_2.png"), linear-gradient(to right, #ff0000, #ffff00, #008000);
         background-size: cover;
         background-position: center;
-        background-image: url("/Images/header_2.png"), linear-gradient(to right, #ff0000, #ffff00, #008000); /* Rasta gradient as the base layer */
-        height: 25px;
-        padding: 40px;
+        padding: 40px 0; /* Adjust padding as needed */
     }
 }
+
 .header-container {
     display: flex; /* Use flexbox for alignment */
     justify-content: space-between; /* Space out the items in the header */
@@ -197,6 +196,9 @@ nav {
         font-size: 20px; /* Larger text for larger screens */
     }
 }
+
+
+/*--------------
 
 /* Main Content Styling */
 main {
@@ -391,4 +393,25 @@ button {
     transform: translateY(-3px); /* Lift effect on hover */
     background-color: rgba(255, 99, 71, 0.1) !important; /* Light orange background on hover */
     border-color: #ff4500; /* Change border color on hover */
+}
+
+/*-----------------
+
+/* Reset body and html margins/padding */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Ensure the body takes full height */
+}
+
+/* Set no margin or padding on the body */
+body {
+    margin: 0;
+    padding: 0;
 }
