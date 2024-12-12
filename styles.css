@@ -131,63 +131,101 @@ header {
     pointer-events: none; /* Ensures that the header doesn't block interactions with the menu */
 }
 
+/* -- General Reset and Basic Styles -- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Ensure the body takes full height */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* -- Header Styling -- */
+
+/* Fixed header with background image */
+header {
+    background-image: url("/Images/header.png"), linear-gradient(to right, #ff0000, #ffff00, #008000);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 40px 0;
+    height: auto;
+    position: fixed; /* Keep header fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure header stays on top but below hamburger button */
+    pointer-events: none; /* Prevent header from blocking interactions */
+}
+
 /* -- Navigation Styles -- */
 
-/* General Styles for the Navigation */
 nav {
-    background: linear-gradient(to right, #ff0000, #ffff00, #008000); /* Gradient background */
+    background: linear-gradient(to right, #ff0000, #ffff00, #008000);
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: relative;
     width: 100%;
-    z-index: 1000; /* Base z-index for the nav bar */
+    z-index: 1000; /* Default z-index for nav */
 }
 
-/* Hamburger Icon (button to open the mobile menu) */
+/* -- Hamburger Icon (Mobile Only) -- */
+
 .hamburger {
-    display: none; /* Hidden by default */
-    font-size: 30px; /* Icon size */
-    color: #000; /* Icon color */
+    display: none; /* Hide by default */
+    font-size: 30px;
+    color: #000;
     cursor: pointer;
-    z-index: 1020; /* Above the header but below the menu */
-    position: fixed; /* Fixed position to stay at the top of the viewport */
-    top: 20px; /* Space from the top of the screen */
-    left: 20px; /* Space from the left of the screen */
-    padding: 10px;
+    z-index: 1100; /* Place hamburger icon above nav */
+    position: fixed; /* Keep hamburger fixed at the top of the screen */
+    top: 20px;
+    left: 20px;
+    width: auto;
+    height: auto;
 }
 
-/* Mobile Layout - Show hamburger menu */
+/* -- Mobile Layout (Show hamburger menu) -- */
+
 @media (max-width: 768px) {
     .hamburger {
         display: block; /* Show hamburger icon on mobile */
     }
 
-    /* Mobile Navigation (Hamburger Menu) */
+    /* Mobile Navigation Menu */
     .nav-links {
-        display: none; /* Hidden by default */
+        display: none; /* Initially hidden */
         flex-direction: column;
-        background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
-        position: fixed; /* Fixed position */
+        background: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        height: 100vh; /* Full height of the screen */
-        padding-top: 80px; /* Add space for the fixed header */
-        align-items: center; /* Center menu items horizontally */
-        overflow-y: auto; /* Allow vertical scrolling if needed */
-        transform: translateX(-100%); /* Initially hidden */
-        transition: transform 0.3s ease; /* Smooth sliding transition */
-        z-index: 1005; /* Ensure menu is below header and above content */
+        height: 100vh; /* Full viewport height */
+        padding-top: 80px; /* Space for the header */
+        align-items: center;
+        overflow-y: auto;
+        transform: translateX(-100%); /* Initially off-screen */
+        transition: transform 0.3s ease;
+        z-index: 999; /* Below the hamburger but above the body content */
     }
 
     .nav-links.active {
-        display: flex; /* Show menu when active */
-        transform: translateX(0); /* Slide in */
-        overflow-x: hidden; /* Prevent horizontal scrolling */
+        display: flex; /* Show menu */
+        transform: translateX(0); /* Slide in from left */
+        overflow-x: hidden;
     }
 
     .nav-links li {
-        margin: 20px 0; /* Spacing between items */
+        margin: 20px 0;
     }
 
     .nav-links li a {
@@ -199,48 +237,43 @@ nav {
     }
 }
 
+/* -- Desktop Layout (Above 768px) -- */
 
-/* About Section Styling--------------------------------------------------------------------- */
-#about {
-    margin-top: 40px; /* Add margin to the top of the About section */
-    padding: 20px; /* Add padding inside the About section */
-    background-color: #e0e0e0; /* Set a light gray background color */
-    border-radius: 8px; /* Round the corners of the About section */
+@media (min-width: 768px) {
+    /* Hide hamburger button on larger screens */
+    .hamburger {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex; /* Horizontal menu for desktops */
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .nav-links li {
+        margin: 0 20px;
+    }
+
+    .nav-links li a {
+        font-size: 18px;
+        color: #000;
+        padding: 10px 15px;
+    }
 }
 
-#about h3 {
-    font-size: 24px; /* Set font size for the header in the About section */
-    color: #333; /* Set the color of the header text */
+/* -- Larger Screens (Above 1200px) -- */
+
+@media (min-width: 1200px) {
+    .nav-links li {
+        margin: 0 30px;
+    }
+
+    .nav-links li a {
+        font-size: 20px;
+    }
 }
 
-#about p {
-    font-size: 18px; /* Set the font size for the paragraph text */
-    color: #000000; /* Set a darker color for the paragraph text */
-}
-
-/* Footer Styling */
-footer {
-    display: flex; /* Use flexbox to align footer content */
-    justify-content: space-between; /* Space the items out */
-    align-items: center; /* Vertically align the items */
-    padding: 2px; /* Add padding to the footer */
-    background-color: #333; /* Set a dark background color for the footer */
-    color: white; /* Set the footer text color to white */
-}
-
-footer p {
-    margin: 0; /* Remove the margin from the footer paragraph */
-}
-
-.tos-link {
-    color: white; /* Set the color of the Terms of Service link */
-    text-decoration: none; /* Remove the underline from the link */
-    font-size: 14px; /* Set the font size of the link */
-}
-
-.tos-link:hover {
-    text-decoration: underline; /* Add underline on hover */
-}
 
 /*--Products styling----------------------------------------------------------------------------/*
 
