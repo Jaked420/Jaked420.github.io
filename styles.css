@@ -91,17 +91,23 @@ nav {
     background: linear-gradient(to right, #ff0000, #ffff00, #008000); /* Gradient background */
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for floating effect */
-    
+    position: sticky;
+    top: 0; /* Keep navbar sticky */
+    width: 100%;
+    z-index: 1000; /* Ensure navbar stays on top */
 }
 
+/* List Styles for Navigation */
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex; /* Use flexbox for the links */
+    justify-content: center; /* Center the links horizontally */
 }
 
+/* Navigation Item Styles */
 nav ul li {
-    display: inline-block;
     margin: 0 20px; /* Space between items */
 }
 
@@ -115,28 +121,28 @@ nav ul li a {
     padding: 8px 15px;
 }
 
+/* Hover and Focus Effects for Links */
 nav ul li a:hover, nav ul li a:focus {
     color: #ffcc00; /* Highlight color on hover/focus */
     transform: scale(1.1); /* Slight zoom effect */
 }
 
-/* Hamburger Icon */
+/* Hamburger Icon - Hidden by default */
 .hamburger {
-    display: none;
+    display: none; /* Hidden by default */
     font-size: 30px;
     color: #000;
     cursor: pointer;
-    z-index: 1100; /* Place on top of the menu */
+    z-index: 1100; /* Ensure it stays above the menu */
+    position: fixed;
+    top: 20px;
+    left: 20px; /* Position it at the top-left */
 }
 
-#navbar {
-    position: sticky;
-    top: 0; /* Keep navbar sticky */
-}
-
-/* Mobile Navigation (Hamburger) */
+/* Mobile Navigation (Hamburger Menu) */
 @media (max-width: 767px) {
-    /* Hamburger Icon */
+
+    /* Hamburger Icon Visible on Mobile */
     .hamburger {
         display: block; /* Display hamburger on mobile */
     }
@@ -150,23 +156,26 @@ nav ul li a:hover, nav ul li a:focus {
         left: 0;
         width: 100%;
         height: 100vh; /* Full height */
-        padding-top: 80px; /* Space for header */
+        padding-top: 80px; /* Space for header and hamburger icon */
         align-items: center; /* Center links */
-        overflow-y: auto; /* Scrollable menu if needed */
+        overflow-y: auto; /* Allow scrolling if needed */
         transform: translateX(-100%); /* Initially hide off-screen */
         transition: transform 0.3s ease; /* Smooth sliding effect */
-        
     }
 
+    /* When active, show the menu */
     .nav-links.active {
         display: flex; /* Show the menu when active */
-        transform: translateX(0); /* Slide in the menu */
+        transform: translateX(0); /* Slide the menu in */
+        overflow-x: hidden;
     }
 
+    /* Mobile Menu Item Spacing */
     .nav-links li {
-        margin: 20px 0; /* Spacing between menu items */
+        margin: 20px 0; /* Add spacing between items */
     }
 
+    /* Link Styling for Mobile */
     .nav-links li a {
         font-size: 18px;
         color: #fff;
@@ -175,10 +184,57 @@ nav ul li a:hover, nav ul li a:focus {
         width: 100%; /* Full width for easy tapping */
     }
 
+    /* Hover Effects for Mobile Links */
     .nav-links li a:hover, .nav-links li a:focus {
         background-color: rgba(255, 255, 255, 0.2); /* Background on hover/focus */
         color: #ffcc00;
     }
+
+    /* Make Navbar Sticky Only on Mobile */
+    #navbar {
+        position: fixed; /* Fix navbar on mobile */
+        top: 0;
+        width: 100%;
+    }
+}
+
+/* Desktop Navigation (Above 768px) */
+@media (min-width: 768px) {
+    nav ul {
+        display: flex; /* Align links horizontally */
+        justify-content: center; /* Center the links */
+    }
+
+    /* Hide Hamburger Icon on Desktop */
+    .hamburger {
+        display: none;
+    }
+
+    /* Horizontal Navigation Styling on Desktop */
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        align-items: center; /* Center links vertically */
+        position: relative; /* Relative position for non-fixed navbar */
+        height: auto; /* Let the navbar adjust to the content */
+    }
+
+    .nav-links li {
+        margin: 0 20px; /* Horizontal spacing between items */
+    }
+
+    .nav-links li a {
+        font-size: 18px;
+        color: #000; /* Dark color for desktop */
+        padding: 10px 15px;
+    }
+
+    .nav-links li a:hover, .nav-links li a:focus {
+        background-color: rgba(255, 255, 255, 0.2); /* Background on hover */
+        color: #ffcc00; /* Highlight text on hover */
+    }
+}
+
 
     /* Make Navbar Sticky Only on Mobile */
     #navbar {
