@@ -111,7 +111,7 @@ header {
         justify-content: flex-start; /* Align items to the top (start) */
         overflow-y: auto; /* Allow scrolling if needed */
         transform: translateX(-100%); /* Initially hide off-screen */
-        transition: transform 0.3s ease; /* Smooth sliding effect */
+        transition: transform 0.5s ease; /* Smooth sliding effect */
     }
 
     /* When active, show the menu */
