@@ -94,7 +94,44 @@ header {
     }
 }
 
-/*-- Navigation --*/
+/*-- General Reset and Basic Styles --*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure body and html take up full height */
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*-- Header Styling --*/
+
+/* Ensure header background image is visible in front of the menu */
+header {
+    background-image: url("/Images/header.png"), linear-gradient(to right, #ff0000, #ffff00, #008000);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 40px 0;
+    height: auto;
+    position: fixed; /* Fixed to stay at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1100; /* High z-index to stay on top of other elements */
+    pointer-events: none; /* Ensures the header doesn't block interactions with the menu */
+}
+
+/*-- Navigation Styles --*/
 
 /* General Styles for the Navigation */
 nav {
@@ -112,7 +149,7 @@ nav {
     font-size: 30px; /* Icon size */
     color: #000; /* Icon color */
     cursor: pointer;
-    z-index: 1101; /* Above nav, below menu */
+    z-index: 1200; /* Above nav, above the header */
     position: fixed;
     top: 20px;
     left: 20px;
@@ -128,7 +165,7 @@ nav {
     .nav-links {
         display: none; /* Hidden by default */
         flex-direction: column;
-        background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+        background: rgba(255, 255, 255, 0.8); /* Semi-transparent background to show header image behind */
         position: fixed; /* Fixed position */
         top: 0;
         left: 0;
@@ -139,7 +176,7 @@ nav {
         overflow-y: auto; /* Allow vertical scrolling if needed */
         transform: translateX(-100%); /* Initially hidden */
         transition: transform 0.3s ease; /* Smooth transition */
-        z-index: 999; /* Ensure the menu stays below the header */
+        z-index: 999; /* Ensure the menu is below the header */
     }
 
     .nav-links.active {
@@ -161,41 +198,6 @@ nav {
     }
 }
 
-/*-- Header Styling --*/
-
-/* Ensure header background image is visible in front of the menu */
-header {
-    background-image: url("/Images/header.png"), linear-gradient(to right, #ff0000, #ffff00, #008000);
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 40px 0;
-    height: auto;
-    position: fixed; /* Fix header in place */
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1100; /* Higher than the menu to stay in front */
-    pointer-events: none; /* Ensures the header doesn't block interactions with the menu */
-}
-
-/* Reset body and html margins/padding */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    height: 100%;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-}
 
 
 /* About Section Styling--------------------------------------------------------------------- */
