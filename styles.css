@@ -86,119 +86,153 @@ header {
 
 /*-------------------------------------------------------------------------------------------------
 
-/* Navigation Styling */
+/* General Styles for the Navigation */
 nav {
     background: linear-gradient(to right, #ff0000, #ffff00, #008000); /* Gradient background */
-    text-align: center; /* Center the navigation links */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow for a floating effect */
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for floating effect */
     position: sticky;
-    top: 0; /* Keep navbar at the top */
-    z-index: 1000; /* Ensure navbar stays above other elements */
+    top: 0;
+    z-index: 1000;
+    width: 100%; /* Ensure it spans the full width */
+    padding: 10px 0;
 }
 
 nav ul {
-    list-style: none; /* Remove default list styling */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
-    display: inline-block; /* Display list items inline */
-    margin: 0 20px; /* Add margin between list items */
+    display: inline-block;
+    margin: 0 20px; /* Space between items */
 }
 
+/* Link Styling */
 nav ul li a {
-    color: #000000; /* Set the text color */
-    text-decoration: none; /* Remove underline */
-    font-size: 18px; /* Font size for links */
-    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transitions for color and transform */
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    padding: 8px 15px;
 }
 
-nav ul li a:hover {
-    color: #ffcc00; /* Hover color */
-    transform: scale(1.1); /* Slightly enlarge the text on hover */
+nav ul li a:hover, nav ul li a:focus {
+    color: #ffcc00; /* Highlight color on hover/focus */
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Hamburger Icon */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: #000;
+    cursor: pointer;
+    z-index: 1100; /* Place on top of the menu */
+}
+
+#navbar {
+    position: sticky;
+    top: 0; /* Keep navbar sticky */
 }
 
 /* Mobile Navigation (Hamburger) */
 @media (max-width: 767px) {
+    /* Hamburger Icon */
     .hamburger {
-        display: block; /* Show the hamburger icon on smaller screens */
-        font-size: 30px; /* Font size of the hamburger icon */
-        color: #000000; /* Hamburger color */
-        cursor: pointer; /* Make it clickable */
-        z-index: 1100; /* Ensure hamburger is above content */
-        position: relative;
+        display: block; /* Display hamburger on mobile */
     }
 
     .nav-links {
-        display: none; /* Hide the navigation links by default */
-        flex-direction: column; /* Stack the links vertically */
-        background: linear-gradient(to right, #ff0000, #ffff00, #008000); /* Apply gradient background */
-        position: fixed; /* Position the menu fixed on the screen */
-        top: 0; /* Align to top of the screen */
-        left: 0; /* Align to the left */
-        width: 100%; /* Full screen width */
-        height: 100vh; /* Full screen height */
-        padding: 20px 0; /* Padding inside the menu */
-        align-items: center; /* Center the links horizontally */
-        overflow-x: hidden; /* Prevent horizontal scrolling */
-        transform: translateX(-100%); /* Initially hide the menu off-screen */
-        transition: transform 0.3s ease-in-out; /* Smooth transition for sliding menu */
+        display: none; /* Hide menu by default */
+        flex-direction: column; /* Stack links vertically */
+        background: linear-gradient(to right, #ff0000, #ffff00, #008000);
+        position: fixed; /* Fix the menu to the top of the screen */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh; /* Full height */
+        padding-top: 80px; /* Space for header */
+        align-items: center; /* Center links */
+        overflow-y: auto; /* Scrollable menu if needed */
+        transform: translateX(-100%); /* Initially hide off-screen */
+        transition: transform 0.3s ease; /* Smooth sliding effect */
     }
 
     .nav-links.active {
-        display: flex; /* Show the navigation links when the "active" class is added */
-        transform: translateX(0); /* Slide the menu in from the left */
+        display: flex; /* Show the menu when active */
+        transform: translateX(0); /* Slide in the menu */
     }
 
     .nav-links li {
-        margin: 15px 0; /* Margin between list items */
-        transition: margin 0.3s ease; /* Smooth margin transition */
+        margin: 20px 0; /* Spacing between menu items */
     }
 
     .nav-links li a {
-        font-size: 18px; /* Set font size for mobile navigation links */
-        text-align: center; /* Center-align the links */
-        color: #fff; /* White text color for links */
-        padding: 10px; /* Padding around the links */
-        width: 100%; /* Full width for better touch targets */
-        transition: background 0.3s ease, color 0.3s ease; /* Smooth background and color change */
+        font-size: 18px;
+        color: #fff;
+        text-align: center;
+        padding: 15px 20px;
+        width: 100%; /* Full width for easy tapping */
     }
 
-    .nav-links li a:hover {
-        background-color: rgba(255, 255, 255, 0.2); /* Slight background color change on hover */
-        color: #ffcc00; /* Change link color on hover */
+    .nav-links li a:hover, .nav-links li a:focus {
+        background-color: rgba(255, 255, 255, 0.2); /* Background on hover/focus */
+        color: #ffcc00;
     }
 
+    /* Make Navbar Sticky Only on Mobile */
     #navbar {
-        position: sticky;
-        top: 0; /* Keep navbar sticky only for mobile */
+        position: fixed; /* Fix navbar on mobile */
+        top: 0;
+        width: 100%;
     }
 }
 
-/* Desktop Navigation */
+/* Tablet / Desktop Navigation (Above 768px) */
 @media (min-width: 768px) {
     .hamburger {
-        display: none; /* Hide the hamburger icon on larger screens */
+        display: none; /* Hide hamburger on desktop */
     }
 
     .nav-links {
-        display: flex; /* Display navigation links horizontally */
-        flex-direction: row; /* Align links horizontally */
-        background-color: transparent; /* Transparent background */
-        padding: 0; /* Remove padding */
-        color: #000000;
+        display: flex; /* Align items in a row */
+        flex-direction: row;
+        justify-content: center; /* Center the links horizontally */
+        background: transparent;
+        padding: 0;
+        position: relative;
     }
 
     .nav-links li {
-        margin: 0 15px; /* Margin between the list items */
+        margin: 0 20px; /* Spacing between items */
     }
 
     .nav-links li a {
-        font-size: 18px; /* Font size for desktop links */
-        color: #000000; /* Black text color */
+        font-size: 18px;
+        color: #000; /* Dark color for desktop */
+        padding: 10px 15px;
+    }
+
+    .nav-links li a:hover, .nav-links li a:focus {
+        background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+        color: #ffcc00; /* Highlight color */
     }
 }
+
+/* Larger Desktop/TV Screens */
+@media (min-width: 1200px) {
+    nav ul li {
+        margin: 0 30px; /* Increased space for large screens */
+    }
+
+    nav ul li a {
+        font-size: 20px; /* Larger text for larger screens */
+    }
+}
+
 
 
 
