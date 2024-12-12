@@ -100,7 +100,7 @@ nav {
 @media (min-width: 768px) {
     /* Adjust the navbar's top margin to position it below the header */
     nav {
-        margin-top: 26px; /* Adjust this value to match the height of your header */
+        margin-top: 60px; /* Adjust this value to match the height of your header */
     }
 }
 
@@ -196,7 +196,7 @@ nav ul li a:hover, nav ul li a:focus {
 
     /* Make Navbar Sticky Only on Mobile */
     #navbar {
-        position: fixed; /* Fix navbar on mobile */
+        position: relative; /* Fix navbar on mobile */
         top: 0;
         width: 100%;
     }
@@ -205,7 +205,7 @@ nav ul li a:hover, nav ul li a:focus {
 /* Desktop Navigation (Above 768px) */
 @media (min-width: 768px) {
     nav {
-        margin-top: 26px; /* Adjust this margin to position navbar below header */
+        margin-top: 60px; /* Adjust this margin to position navbar below header */
     }
 
     nav ul {
@@ -253,6 +253,7 @@ nav ul li a:hover, nav ul li a:focus {
         font-size: 20px; /* Larger text for larger screens */
     }
 }
+
 
 
 /*------------------------------------------------------------------------------------------------------
