@@ -149,7 +149,7 @@ nav {
     font-size: 30px; /* Icon size */
     color: #000; /* Icon color */
     cursor: pointer;
-    z-index: 1200; /* Above nav, above the header */
+    z-index: 1100; /* Above nav, above the header */
     position: fixed;
     top: 20px;
     left: 20px;
