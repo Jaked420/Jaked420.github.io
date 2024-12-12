@@ -96,6 +96,14 @@ nav {
     z-index: 1000; /* Ensure navbar stays on top */
 }
 
+/* Ensure the navbar is spaced below the header */
+@media (min-width: 768px) {
+    /* Adjust the navbar's top margin to position it below the header */
+    nav {
+        margin-top: 80px; /* Adjust this value to match the height of your header */
+    }
+}
+
 /* List Styles for Navigation */
 nav ul {
     list-style: none;
@@ -197,7 +205,7 @@ nav ul li a:hover, nav ul li a:focus {
 /* Desktop Navigation (Above 768px) */
 @media (min-width: 768px) {
     nav {
-        margin-top: 80px; /* Space below header */
+        margin-top: 80px; /* Adjust this margin to position navbar below header */
     }
 
     nav ul {
