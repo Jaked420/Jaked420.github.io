@@ -24,7 +24,7 @@ header {
     color: white;
     padding: 40px 0; /* Add padding to the top and bottom of the header */
     height: auto; /* Let the height be controlled by the padding */
-    z-index: 999;
+    z-index: 1001;
 
 }
 
@@ -37,7 +37,7 @@ header {
         background-position: center;
         padding: 40px 0; /* Adjust padding as needed */
         height: auto;
-        z-index: 999;
+        z-index: 1001;
     }
 }
 
