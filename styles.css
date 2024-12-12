@@ -73,7 +73,7 @@ header {
 }
 
 /* Media query for screens larger than 768px (laptop/tablet and up) */
-@media (min-width: 801px) {
+@media (min-width: 768px) {
     /* Show the laptop header and hide the mobile header */
     .laptop-header {
         display: block;
@@ -88,177 +88,114 @@ header {
 
 /* General Styles for the Navigation */
 nav {
-    background: linear-gradient(to right, #ff0000, #ffff00, #008000); /* Gradient background */
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for floating effect */
-    position: relative;
-    width: 100%;
-    z-index: 1000; /* Ensure navbar stays on top */
+    background: linear-gradient(to right, #ff0000, #ffff00, #008000); /* Gradient background from red to yellow to green */
+    text-align: center; /* Centers the text inside the navigation */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adds a soft shadow to create a floating effect */
+    position: relative; /* Positions navbar relative to its normal flow in the document */
+    width: 100%; /* Makes the navbar span the full width of the viewport */
+    z-index: 1000; /* Ensures the navbar stays above other content */
 }
 
-/* List Styles for Navigation */
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex; /* Use flexbox for the links */
-    justify-content: center; /* Center the links horizontally */
-}
+/*------------------------------------------------- */
 
-/* Navigation Item Styles */
-nav ul li {
-    margin: 0 20px; /* Space between items */
-}
-
-/* Link Styling */
-nav ul li a {
-    color: #000;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
-    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
-    padding: 8px 15px;
-}
-
-/* Hover and Focus Effects for Links */
-nav ul li a:hover, nav ul li a:focus {
-    color: #ffcc00; /* Highlight color on hover/focus */
-    transform: scale(1.1); /* Slight zoom effect */
-}
-
-/* Hamburger Icon - Hidden by default */
+/* Hamburger Icon - Fixed Position */
 .hamburger {
-    display: none; /* Hidden by default */
-    font-size: 30px;
-    color: #000;
-    cursor: pointer;
-    z-index: 1100; /* Ensure it stays above the menu */
-    position: fixed;
-    top: 20px;
-    left: 20px; /* Position it at the top-left */
+    display: none; /* Hides the hamburger icon by default */
+    font-size: 30px; /* Sets the hamburger icon size */
+    color: #000; /* Icon color */
+    cursor: pointer; /* Cursor pointer on hover */
+    z-index: 1100; /* Ensures it stays on top of other elements */
+    position: fixed; /* Fixes the position relative to the viewport */
+    top: 20px; /* 20px from the top of the viewport */
+    left: 20px; /* 20px from the left of the viewport */
+    width: auto; /* Makes the width adjust automatically */
+    height: auto; /* Makes the height adjust automatically */
 }
 
-/* Mobile and Laptop Layout - Make hamburger menu visible */
+/* Mobile and Laptop Layout - Show hamburger menu */
 @media (max-width: 1024px) {
-    /* Show hamburger menu on mobile and laptop screens */
+    /* Show hamburger menu on smaller screens (mobile/tablet) */
     .hamburger {
-        display: block; /* Show hamburger on laptops and mobiles */
-    }
-
-    /* Hide the horizontal navbar for smaller screens */
-    nav ul {
-        display: none; /* Hide navbar links */
+        display: block; /* Displays the hamburger icon */
     }
 
     /* Mobile Navigation (Hamburger Menu) */
     .nav-links {
-        display: none; /* Hide menu by default */
-        flex-direction: column; /* Stack links vertically */
-        background: linear-gradient(to right, #ff0000, #ffff00, #008000);
-        position: fixed; /* Fix the menu to the top of the screen */
+        display: none; /* Hides the mobile menu by default */
+        flex-direction: column; /* Stacks the links vertically */
+        background: linear-gradient(to right, #ff0000, #ffff00, #008000); 
+        position: fixed; /* Fixes the menu to the top of the screen */
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100vh; /* Full height */
-        padding-top: 80px; /* Space for header and hamburger icon */
-        align-items: center; /* Center links */
-        overflow-y: auto; /* Allow scrolling if needed */
-        transform: translateX(-100%); /* Initially hide off-screen */
-        transition: transform 0.3s ease; /* Smooth sliding effect */
+        width: 100%; /* Ensures the menu takes up the full width of the screen */
+        height: 100vh; /* Makes the menu take up the full height of the viewport */
+        padding-top: 80px; /* Adds space for the header and hamburger icon */
+        align-items: center; /* Centers the links horizontally */
+        overflow-y: auto; /* Allows vertical scrolling if needed */
+        transform: translateX(-100%); /* Initially hides the menu off-screen */
+        transition: transform 1s ease; /* Smooth transition effect 
     }
 
-    /* When active, show the menu */
+    /* When the menu is active, show it */
     .nav-links.active {
-        display: flex; /* Show the menu when active */
-        transform: translateX(0); /* Slide the menu in */
-        overflow-x: hidden;
+        display: flex; /* Makes the menu visible */
+        transform: translateX(0); /* Slides the menu in from the left */
+        overflow-x: hidden; /* Prevents horizontal scrolling */
     }
 
     /* Mobile Menu Item Spacing */
     .nav-links li {
-        margin: 20px 0; /* Add spacing between items */
+        margin: 20px 0; /* Adds vertical spacing between items in the mobile menu */
     }
 
     /* Link Styling for Mobile */
     .nav-links li a {
-        font-size: 24px;
-        color: #fff;
-        text-align: center;
-        padding: 15px 20px;
-        width: 100%; /* Full width for easy tapping */
-    }
-
-    /* Hover Effects for Mobile Links */
-    .nav-links li a:hover, .nav-links li a:focus {
-        background-color: rgba(255, 255, 255, 0.2); /* Background on hover/focus */
-        color: #ffcc00;
-    }
+        font-size: 24px; /* Larger font size for mobile users */
+        color: #fff; /* Sets link color to white for better contrast */
+        text-align: center; /* Centers the text inside the links */
+        padding: 15px 20px; /* Adds padding for better touch target */
+        width: 100%; /* Makes the link fill the entire width of its container */
+    } 
+  
 }
 
 /* Desktop Layout (Above 1024px) */
 @media (min-width: 1025px) {
-    /* Hide regular navbar for larger screens */
-    nav ul {
-        display: none;
-    }
-
-    /* Show hamburger menu for larger screens (optional, but you can keep it consistent) */
+    /* Hide hamburger icon and mobile menu for larger screens */
     .hamburger {
-        display: block;
+        display: none; /* Hides the hamburger menu on larger screens */
     }
 
-    /* Use full-screen navbar behavior like mobile for desktops */
+    /* Ensure nav-links are not displayed on larger screens */
     .nav-links {
-        display: none; /* Hide menu by default */
-        flex-direction: column; /* Stack links vertically */
-        background: linear-gradient(to right, #ff0000, #ffff00, #008000);
-        position: fixed; /* Fix the menu to the top of the screen */
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh; /* Full height */
-        padding-top: 80px; /* Space for header and hamburger icon */
-        align-items: center; /* Center links */
-        overflow-y: auto; /* Allow scrolling if needed */
-        transform: translateX(-100%); /* Initially hide off-screen */
-        transition: transform 0.3s ease; /* Smooth sliding effect */
+        display: flex; /* Make sure nav-links are displayed on desktop screens */
+        flex-direction: row; /* Align links horizontally */
+        justify-content: center; /* Centers the links horizontally */
+        margin-top: 0; /* Removes any unwanted margin */
     }
 
-    /* When active, show the menu */
-    .nav-links.active {
-        display: flex; /* Show the menu when active */
-        transform: translateX(0); /* Slide the menu in */
-        overflow-x: hidden;
-    }
-
-    /* Mobile Menu Item Spacing */
+    /* Styling for Desktop Links */
     .nav-links li {
-        margin: 20px 0; /* Add spacing between items */
+        margin: 0 20px; /* Space between items */
     }
 
-    /* Link Styling for Mobile */
     .nav-links li a {
-        font-size: 24px;
-        color: #fff;
-        text-align: center;
-        padding: 15px 20px;
-        width: 100%; /* Full width for easy tapping */
+        font-size: 18px; /* Standard size for desktop links */
+        color: #000; /* Link color for desktop */
+        padding: 10px 15px; /* Adds padding for better touch/click targets */
     }
 
-    /* Hover Effects for Mobile Links */
-    .nav-links li a:hover, .nav-links li a:focus {
-        background-color: rgba(255, 255, 255, 0.2); /* Background on hover/focus */
-        color: #ffcc00;
-    }
+  
 }
 
 /* Larger Desktop/TV Screens */
 @media (min-width: 1200px) {
-    nav ul li {
+    /* Adjust styles for very large screens (optional) */
+    .nav-links li {
         margin: 0 30px; /* Increased space for large screens */
     }
 
-    nav ul li a {
+    .nav-links li a {
         font-size: 20px; /* Larger text for larger screens */
     }
 }
