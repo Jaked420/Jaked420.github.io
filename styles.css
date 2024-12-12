@@ -138,12 +138,12 @@ nav ul li a:hover, nav ul li a:focus {
 
 /* Mobile and Laptop Layout - Make hamburger menu visible */
 @media (max-width: 1024px) {
-    /* Show hamburger menu on laptop screens */
+    /* Show hamburger menu on mobile and laptop screens */
     .hamburger {
-        display: block; /* Show hamburger on laptops */
+        display: block; /* Show hamburger on laptops and mobiles */
     }
 
-    /* Hide the horizontal navbar for laptops */
+    /* Hide the horizontal navbar for smaller screens */
     nav ul {
         display: none; /* Hide navbar links */
     }
@@ -193,7 +193,7 @@ nav ul li a:hover, nav ul li a:focus {
     }
 }
 
-/* Desktop Layout (Above 1024px) - Just like laptop but hiding navbar */
+/* Desktop Layout (Above 1024px) */
 @media (min-width: 1025px) {
     /* Hide regular navbar for larger screens */
     nav ul {
@@ -260,6 +260,7 @@ nav ul li a:hover, nav ul li a:focus {
         font-size: 20px; /* Larger text for larger screens */
     }
 }
+
 
 
 /* Main Content Styling */
