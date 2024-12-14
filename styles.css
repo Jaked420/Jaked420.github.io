@@ -23,7 +23,7 @@ header {
 @media (min-width: 768px) {
     /* Adjust header background and padding for larger screens */
     header {
-        background-image: url("/Images/New_Header_2.png"), linear-gradient(to right, #ff0000, #ffff00, #008000);
+        background-image: url("/Images/New_Header.png"), linear-gradient(to right, #ff0000, #ffff00, #008000);
         background-size: cover;
         background-position: center;
         padding: 40px 0; /* Adjust padding as needed */
