@@ -7,7 +7,7 @@ body {
     overflow-x: hidden;
 }
 
-/*------------------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------*/
 
 /* Header Styling */
 header {
@@ -17,7 +17,7 @@ header {
     color: white; 
     padding: 40px 0; /* Add padding to the top and bottom of the header */
     height: auto; /* Let the height be controlled by the padding */
-    z-index: 1001; /* above when i open nav 
+    z-index: 1001; /* above when I open nav */
 }
 
 /* Media query for larger screens */
@@ -48,6 +48,7 @@ header {
     text-transform: uppercase; /* Convert the title to uppercase */
     letter-spacing: 2px; /* Add spacing between letters */
 }
+
 .cart-btn {
     background-color: transparent; /* Make the button background transparent */
     border: none; /* Remove any border from the button */
@@ -58,6 +59,7 @@ header {
     width: 24px; /* Set the width of the cart icon */
     height: 24px; /* Set the height of the cart icon */
 }
+
 .header-actions {
     display: flex; /* Use flexbox to align cart button and other actions */
     align-items: center; /* Vertically center the items */
@@ -85,7 +87,7 @@ header {
     }
 }
 
-/*------------------------
+/*------------------------*/
 
 /* General Styles for the Navigation */
 nav {
@@ -109,7 +111,6 @@ nav {
     left: 20px; /* 20px from the left of the viewport */
     width: auto; /* Makes the width adjust automatically */
     height: auto; /* Makes the height adjust automatically */
-    z-index: 1002; /* makes it above nav
 }
 
 /* Mobile and Laptop Layout - Show hamburger menu */
@@ -156,7 +157,6 @@ nav {
         padding: 15px 20px; /* Adds padding for better touch target */
         width: 100%; /* Makes the link fill the entire width of its container */
     } 
-  
 }
 
 /* Desktop Layout (Above 1024px) */
@@ -184,8 +184,6 @@ nav {
         color: #000; /* Link color for desktop */
         padding: 10px 15px; /* Adds padding for better touch/click targets */
     }
-
-  
 }
 
 /* Larger Desktop/TV Screens */
@@ -199,9 +197,6 @@ nav {
         font-size: 20px; /* Larger text for larger screens */
     }
 }
-
-
-/*--------------
 
 /* Main Content Styling */
 main {
@@ -234,187 +229,5 @@ footer {
     justify-content: space-between; /* Space the items out */
     align-items: center; /* Vertically align the items */
     padding: 2px; /* Add padding to the footer */
-    background-color: #333; /* Set a dark background color for the footer */
-    color: white; /* Set the footer text color to white */
-}
-
-footer p {
-    margin: 0; /* Remove the margin from the footer paragraph */
-}
-
-.tos-link {
-    color: white; /* Set the color of the Terms of Service link */
-    text-decoration: none; /* Remove the underline from the link */
-    font-size: 14px; /* Set the font size of the link */
-}
-
-.tos-link:hover {
-    text-decoration: underline; /* Add underline on hover */
-}
-
-/* Shopping Cart Sidebar */
-.cart-sidebar {
-    position: fixed; /* Fix the sidebar to the right side of the screen */
-    right: 0; /* Align it to the right */
-    top: 0; /* Align it to the top */
-    background-color: white; /* Set the sidebar background to white */
-    width: 300px; /* Set a fixed width for the sidebar */
-    height: 100%; /* Make the sidebar full height */
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow on the left side */
-    display: none; /* Hide the sidebar by default */
-    flex-direction: column; /* Stack items vertically inside the sidebar */
-    padding: 20px; /* Add padding inside the sidebar */
-    z-index: 1000; /* Ensure the sidebar appears above other content */
-}
-
-.cart-sidebar.visible {
-    display: flex !important; /* Show the sidebar when it has the "visible" class */
-}
-
-.close-btn {
-    background: none; /* Remove the background from the close button */
-    border: none; /* Remove the border */
-    font-size: 24px; /* Set the font size of the close button */
-    color: #333; /* Set the color of the close button */
-    cursor: pointer; /* Make it clickable */
-    align-self: flex-end; /* Position the button to the top-right corner */
-}
-
-#cart-items {
-    margin-top: 20px; /* Add margin to the top of the cart items section */
-}
-
-/* Generic Button Styling */
-button {
-    cursor: pointer; /* Make buttons clickable */
-    font-size: 1.1em; /* Increase the font size */
-    border: none; /* Remove the border from the button */
-    padding: 0; /* Remove padding */
-    margin-top: 10px; /* Add margin to the top */
-    background: transparent; /* Make the background transparent */
-}
-
-/* Snipcart Button Styling */
-.snipcart-add-item {
-    color: black !important; /* Set the text color to black */
-    text-decoration: underline !important; /* Underline the text */
-    font-size: 1.1em !important; /* Increase the font size */
-    background-color: transparent !important; /* Make the background transparent */
-}
-
-.snipcart-add-item:hover {
-    color: #ff6347 !important; /* Change the color to orange on hover */
-    text-decoration: underline !important; /* Keep the underline on hover */
-}
-
-/* Coinbase Button Styling */
-.coinbase-button {
-    color: black !important; /* Set the text color to black */
-    text-decoration: underline !important; /* Underline the text */
-    font-size: 1.1em !important; /* Increase the font size */
-    background-color: transparent !important; /* Make the background transparent */
-}
-
-.coinbase-button:hover {
-    color: #ff6347 !important; /* Change the color to orange on hover */
-    text-decoration: underline !important; /* Keep the underline on hover */
-}
-
-/* Mobile Styling (for screens smaller than 768px) */
-@media (max-width: 768px) {
-    .product-list {
-        grid-template-columns: 1fr; /* Stack the products vertically on smaller screens */
-    }
-
-    .product-image {
-        max-width: 80%; /* Limit the maximum width of the product image */
-    }
-}
-
-/* Desktop Styling (for screens larger than 768px) */
-@media (min-width: 768px) {
-    .product-list {
-        grid-template-columns: repeat(3, 1fr); /* Display the products in 3 columns on larger screens */
-    }
-}
-
-/* Media Queries for Larger Screens */
-@media (min-width: 1024px) {
-    #featured .featured-image,
-    #second-image-section img {
-        max-width: 60%; /* Adjust the image size for larger screens */
-    }
-}
-
-@media (max-width: 768px) {
-    #featured .featured-image,
-    #second-image-section img {
-        max-width: 80%; /* Adjust the image size for smaller screens */
-    }
-}
-
-/* Form Button Styling */
-.formbutton-container .formbutton-title {
-    background-color: #333 !important; /* Match header background */
-    color: white !important; /* Set the text color to white */
-    font-size: 18px; /* Set font size for the title */
-    font-weight: bold; /* Make the title bold */
-    text-transform: uppercase; /* Capitalize the text */
-    letter-spacing: 2px; /* Add spacing between letters */
-    border-radius: 5px; /* Round the corners */
-    padding: 10px; /* Add padding to the title */
-}
-
-.formbutton-container .formbutton-button {
-    position: relative; /* Adjust the positioning of the button */
-    margin-bottom: 30px; /* Add margin below the button */
-    background-color: transparent !important; /* Make the background transparent */
-    color: #000000 !important; /* Set text color to black */
-    font-size: 16px !important; /* Set the font size */
-    font-weight: bold; /* Make the button text bold */
-    border-radius: 4px; /* Round the corners of the button */
-    padding: 10px 40px !important; /* Add padding to the button */
-    border: 0.5px solid #ff6347; /* Add a subtle border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Add transition effects */
-}
-
-/* Media query for smaller screens to adjust spacing */
-@media (max-width: 768px) {
-    .formbutton-container {
-        margin-bottom: 150px; /* Ensure enough space above the footer */
-    }
-
-    .formbutton-container .formbutton-button {
-        margin-top: 10px; /* Add space between button and content above */
-        margin-bottom: 100px; /* Add space between button and footer */
-        padding: 12px 40px; /* Increase padding for mobile screens */
-    }
-}
-
-.formbutton-container .formbutton-button:hover {
-    transform: translateY(-3px); /* Lift effect on hover */
-    background-color: rgba(255, 99, 71, 0.1) !important; /* Light orange background on hover */
-    border-color: #ff4500; /* Change border color on hover */
-}
-
-/*-----------------
-
-/* Reset body and html margins/padding */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    height: 100%; /* Ensure the body takes full height */
-}
-
-/* Set no margin or padding on the body */
-body {
-    margin: 0;
-    padding: 0;
-}
+    background-color: #333;
+    
