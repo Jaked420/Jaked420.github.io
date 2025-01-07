@@ -17,6 +17,7 @@ header {
     color: white; 
     padding: 40px 0; /* Add padding to the top and bottom of the header */
     height: auto; /* Let the height be controlled by the padding */
+    overflow-x: 1005;
 }
 
 /* Media query for larger screens */
