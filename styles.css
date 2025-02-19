@@ -11,7 +11,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: white;
+  background-color: rgb(44, 41, 41);
   overflow-x: hidden;
 }
 
@@ -167,6 +167,17 @@ footer {
   cursor: pointer;
   font-size: 16px;
 }
+
+.cart-button {
+  background-color: #F1B6B6;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
 
 
 /* Optional: Main Content Padding */
