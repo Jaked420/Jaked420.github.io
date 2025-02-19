@@ -1,126 +1,164 @@
-/* General Styling for the Body */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: white;
-    overflow-x: hidden;
+/* Reset margins and paddings for header, nav, and nav ul */
+header,
+nav,
+nav ul {
+  margin: 0;
+  padding: 0;
 }
 
-/* Header Styling (now static) */
+/* General Styling for the Body */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  overflow-x: hidden;
+}
+
+/* Sticky Container for Header and Nav */
+.sticky-container {
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+}
+
+/* Header Styling */
 header {
-    background-image: url("/Images/header.png"), linear-gradient(to right, #ff0000, #ffff00, #008000); 
-    background-size: cover; 
-    background-position: center; 
-    color: white;
-    padding: 40px 0;
-    height: auto;
-    /* Removed sticky properties for header */
-    position: relative;
+  background-image: url("/Images/header.png"), linear-gradient(to right, #ff0000, #ffff00, #008000);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 40px 0;
 }
 
 /* Header Container Styling */
 .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* Navigation Styling - Now Sticky */
+/* Navigation Styling */
 nav {
-    background: linear-gradient(to right, #ff0000, #ffff00, #008000);
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: sticky;  /* Changed from relative to sticky */
-    top: 0;            /* Stick to the top of the viewport */
-    width: 100%;
-    z-index: 1000;     /* Ensure the nav stays above other content */
+  background: linear-gradient(to right, #ff0000, #ffff00, #008000);
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
-/* Hamburger Icon - Fixed Position */
+/* Hamburger Icon - Fixed Position for Mobile */
 .hamburger {
-    display: none;
-    font-size: 30px;
-    color: #000;
-    cursor: pointer;
-    z-index: 1100; /* Ensure hamburger stays on top */
-    position: fixed;
-    top: 20px;
-    left: 20px;
+  display: none;
+  font-size: 30px;
+  color: #000;
+  cursor: pointer;
+  z-index: 1100;
+  position: fixed;
+  top: 20px;
+  left: 20px;
 }
 
-/* Media query for smaller screens (mobile/tablet) */
+/* Navigation Links Styling */
+.nav-links {
+  list-style: none;
+}
+
+/* Mobile/Tablet Styles */
 @media (max-width: 1024px) {
-    .hamburger {
-        display: block; /* Display hamburger on smaller screens */
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        background: linear-gradient(to right, #ff0000, #ffff00, #008000);
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        padding-top: 80px;
-        align-items: center;
-        overflow-y: auto;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-    }
-
-    .nav-links.active {
-        display: flex;
-        transform: translateX(0);
-        overflow-x: hidden;
-    }
-
-    .nav-links li {
-        margin: 20px 0;
-    }
-
-    .nav-links li a {
-        font-size: 24px;
-        color: #fff;
-        text-align: center;
-        padding: 15px 20px;
-        width: 100%;
-    }
+  .hamburger {
+    display: block;
+  }
+  
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: linear-gradient(to right, #ff0000, #ffff00, #008000);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding-top: 80px;
+    align-items: center;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .nav-links.active {
+    display: flex;
+    transform: translateX(0);
+    overflow-x: hidden;
+  }
+  
+  .nav-links li {
+    margin: 20px 0;
+  }
+  
+  .nav-links li a {
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    padding: 15px 20px;
+    width: 100%;
+  }
 }
 
-/* Larger Screens (Laptop/Desktop) */
+/* Desktop Styles */
 @media (min-width: 1025px) {
-    .hamburger {
-        display: none;
-    }
-
-    .nav-links {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .nav-links li {
-        margin: 0 20px;
-    }
-
-    .nav-links li a {
-        font-size: 18px;
-        color: #000;
-        padding: 10px 15px;
-    }
+  .hamburger {
+    display: none;
+  }
+  
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .nav-links li {
+    margin: 0 20px;
+  }
+  
+  .nav-links li a {
+    font-size: 18px;
+    color: #000;
+    padding: 10px 15px;
+  }
 }
 
 /* Footer Styling */
 footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2px;
-    background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px;
+  background-color: #333;
+  color: white;
+}
+
+/* Shopping Cart - Hidden by Default */
+.shopping-cart {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  background: #fff;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.shopping-cart.active {
+  display: block;
+  transform: translateY(0);
+}
+
+/* Optional: Main Content Padding */
+.content {
+  padding: 20px;
 }
