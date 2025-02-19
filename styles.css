@@ -113,6 +113,10 @@ nav {
     display: none;
   }
   
+  body.snipcart-active .hamburger {
+    display: none;
+  }
+  
   .nav-links {
     display: flex;
     flex-direction: row;
