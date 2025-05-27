@@ -16,62 +16,6 @@
       background-color: rgb(44, 41, 41);
       color: white;
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    .products-section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .products-section h2 {
-      font-size: 2.5rem;
-      text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88;
-      margin-bottom: 20px;
-    }
-    .products-section p {
-      max-width: 700px;
-      margin: 0 auto 40px;
-      font-size: 1.2rem;
-    }
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .product-card {
-      background: #222;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 0 10px #00ff88;
-      transition: transform 0.3s ease;
-    }
-    .product-card:hover {
-      transform: scale(1.05);
-    }
-    .product-card img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-    .product-title {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-    .product-price {
-      font-size: 1rem;
-      margin-bottom: 15px;
-    }
-    .explore-btn {
-      background: linear-gradient(90deg, #00ff88, #39ff14);
-      color: white;
-      text-decoration: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      display: inline-block;
-      font-weight: bold;
-      box-shadow: 0 0 8px #00ff88;
     }
     nav {
       background: linear-gradient(to right, #0f0f0f, #1a1a1a);
@@ -113,8 +57,8 @@
       width: 40px;
     }
     .nav-toggle span,
-    .nav-toggle span:before,
-    .nav-toggle span:after {
+    .nav-toggle span::before,
+    .nav-toggle span::after {
       display: block;
       background: #00ff88;
       height: 4px;
@@ -125,19 +69,18 @@
       transition: all 0.3s;
     }
     .nav-toggle span {
-      top: 18px;
       position: relative;
+      top: 18px;
     }
-    .nav-toggle span:before,
-    .nav-toggle span:after {
+    .nav-toggle span::before {
       content: '';
+      top: -10px;
       position: absolute;
     }
-    .nav-toggle span:before {
-      top: -10px;
-    }
-    .nav-toggle span:after {
+    .nav-toggle span::after {
+      content: '';
       top: 10px;
+      position: absolute;
     }
     @media (max-width: 700px) {
       .nav-toggle {
@@ -147,21 +90,17 @@
         flex-direction: column;
         align-items: center;
         width: 100%;
-        justify-content: flex-start;
         background: linear-gradient(to right, #0f0f0f, #1a1a1a);
-        border-bottom: 2px solid #00ff88;
-        padding: 0;
         position: absolute;
         left: 0;
         top: 100%;
         z-index: 99;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s;
+        transition: max-height 0.3s ease;
       }
       .nav-links.open {
-        max-height: 500px;
-        padding-bottom: 10px;
+        max-height: 300px;
       }
       .nav-links li {
         width: 90%;
@@ -169,41 +108,18 @@
         text-align: center;
       }
     }
-    /* Footer fix: always full width, no offset */
-    footer {
-      width: 100%;
-      left: 0;
-      right: 0;
-      margin: 0;
-      position: relative;
-      box-sizing: border-box;
-      border-top: 3px solid #00ff88;
-      box-shadow: 0 0 15px #00ff88;
-      margin-top: 40px;
-      background: linear-gradient(to right, #0f0f0f, #1a1a1a);
-    }
-    .footer-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      padding: 30px 20px;
-      width: 100%;
-      box-sizing: border-box;
-    }
   </style>
 </head>
 <body>
-  
+
 <header style="background: linear-gradient(to right, #111, #222); padding: 40px 0; box-shadow: 0 0 20px #00ff88;">
   <div style="display: flex; justify-content: center; align-items: center;">
-    <img src="Images/footer.png" alt="Best Budz Logo" style="height: 80px; margin-right: 20px;" />
-    <h1 class="site-title" style="color: #00ff88; text-shadow: 0 0 10px #00ff88; font-size: 2.5rem;">Best Budz</h1>
+    <img src="Images/footer.png" alt="Best Budz Logo" style="height: 80px;" />
   </div>
 </header>
 
 <nav id="navbar">
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
     <span></span>
   </button>
   <ul class="nav-links" id="nav-links">
@@ -214,59 +130,20 @@
 </nav>
 
 <main class="products-section">
-  <h2>Welcome to Best Budz</h2>
-  <p>High-quality, lab-tested hemp and CBD products delivered with style. Explore our trusted selections and join a thriving community built on wellness and trust.</p>
-  <div class="product-grid">
-    <div class="product-card">
-      <img src="Images/welcome1.jpg" alt="Explore Products">
-      <div class="product-title">Delta-8 Gummies</div>
-      <div class="product-price">Delicious & effective</div>
-      <a href="products.html" class="explore-btn">Shop Now</a>
-    </div>
-    <div class="product-card">
-      <img src="Images/community.jpg" alt="Community">
-      <div class="product-title">Join the Budz</div>
-      <div class="product-price">Contact our team 24/7</div>
-      <a href="contact.html" class="explore-btn">Reach Out</a>
-    </div>
-    <div class="product-card">
-      <img src="Images/compliance.jpg" alt="Compliance">
-      <div class="product-title">100% Legal</div>
-      <div class="product-price">Compliant & lab-tested</div>
-      <a href="#legal-compliance" class="explore-btn">Know Your Rights</a>
-    </div>
-  </div>
+  <!-- Your content here -->
 </main>
-  
+
 <footer>
-  <div class="footer-content">
-    <img src="Images/footer.png" alt="Footer Logo" style="height: 60px; margin-bottom: 10px;" />
-    <div style="text-align: center;">
-      <p style="font-size: 1.2rem;">Follow Best Budz</p>
-      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 10px;">
-        <a href="https://instagram.com" target="_blank" style="color: #00ff88; text-decoration: none;">Instagram</a>
-        <a href="https://twitter.com" target="_blank" style="color: #00ff88; text-decoration: none;">Twitter</a>
-        <a href="https://facebook.com" target="_blank" style="color: #00ff88; text-decoration: none;">Facebook</a>
-        <a href="https://tiktok.com" target="_blank" style="color: #00ff88; text-decoration: none;">TikTok</a>
-        <a href="https://youtube.com" target="_blank" style="color: #00ff88; text-decoration: none;">YouTube</a>
-        <a href="https://discord.gg" target="_blank" style="color: #00ff88; text-decoration: none;">Discord</a>
-      </div>
-    </div>
-    <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; font-size: 0.95rem;">
-      <a href="contribution.html" style="color: #00ff88; text-decoration: underline;">Contributions</a>
-      <a href="terms-of-service.html" style="color: #00ff88; text-decoration: underline;">Terms of Service</a>
-    </div>
-    <div style="text-align: center; font-size: 0.9rem; color: #ccc;">
-      <p>&copy; 2024 Best Budz. All rights reserved.</p>
-    </div>
-  </div>
+  <!-- Your footer here -->
 </footer>
 
 <script>
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('nav-links');
+
   navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
   });
 </script>
 
