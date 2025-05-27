@@ -100,7 +100,49 @@
       font-weight: bold;
       font-size: 1.1rem;
     }
+    .nav-toggle {
+      display: none;
+      position: absolute;
+      top: 12px;
+      right: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 100;
+      height: 40px;
+      width: 40px;
+    }
+    .nav-toggle span,
+    .nav-toggle span:before,
+    .nav-toggle span:after {
+      display: block;
+      background: #00ff88;
+      height: 4px;
+      width: 32px;
+      border-radius: 2px;
+      position: absolute;
+      left: 4px;
+      transition: all 0.3s;
+    }
+    .nav-toggle span {
+      top: 18px;
+      position: relative;
+    }
+    .nav-toggle span:before,
+    .nav-toggle span:after {
+      content: '';
+      position: absolute;
+    }
+    .nav-toggle span:before {
+      top: -10px;
+    }
+    .nav-toggle span:after {
+      top: 10px;
+    }
     @media (max-width: 700px) {
+      .nav-toggle {
+        display: block;
+      }
       .nav-links {
         flex-direction: column;
         align-items: center;
@@ -109,6 +151,17 @@
         background: linear-gradient(to right, #0f0f0f, #1a1a1a);
         border-bottom: 2px solid #00ff88;
         padding: 0;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        z-index: 99;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s;
+      }
+      .nav-links.open {
+        max-height: 500px;
+        padding-bottom: 10px;
       }
       .nav-links li {
         width: 90%;
@@ -150,6 +203,9 @@
 </header>
 
 <nav id="navbar">
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+    <span></span>
+  </button>
   <ul class="nav-links" id="nav-links">
     <li><a href="home.html">Home</a></li>
     <li><a href="products.html">Products</a></li>
@@ -205,6 +261,14 @@
     </div>
   </div>
 </footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('nav-links');
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+</script>
 
 </body>
 </html>
