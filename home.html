@@ -1,243 +1,165 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Home - Best Budz</title>
-  
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Best Budz - Your Go-To Shop for Quality Products" />
-  <meta property="og:description" content="Best Budz offers a variety of high-quality products. Check out our latest collection!" />
-  <meta property="og:image" content="https://bestbudz.xyz/Images/meta_weed_guy_1.png" />
-  <meta property="og:url" content="https://bestbudz.xyz" />
-
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Best Budz - Your Go-To Shop for Quality Products" />
-  <meta name="twitter:description" content="Best Budz offers a variety of high-quality products. Check out our latest collection!" />
-  <meta name="twitter:image" content="https://bestbudz.xyz/Images/meta_weed_guy_1.png" />
-
-  <!-- For ICO format -->
-  <link rel="icon" href="/Images/ico_2.ico" type="image/x-icon">
-  
-  <!-- Snipcart CSS -->
-  <link href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" rel="stylesheet" />
-
-  <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- Combined TradingView Widget Styles -->
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    .tradingview-widget-container {
-      width: 100%;
-      max-width: 600px;
+    body {
+      background-color: rgb(44, 41, 41);
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .products-section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .products-section h2 {
+      font-size: 2.5rem;
+      text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88;
+      margin-bottom: 20px;
+    }
+    .products-section p {
+      max-width: 700px;
+      margin: 0 auto 40px;
+      font-size: 1.2rem;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
       margin: 0 auto;
     }
-    .tradingview-widget-container__widget {
+    .product-card {
+      background: #222;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 10px #00ff88;
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+    .product-card img {
       width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    .product-title {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .product-price {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+    .explore-btn {
+      background: linear-gradient(90deg, #00ff88, #39ff14);
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      display: inline-block;
+      font-weight: bold;
+      box-shadow: 0 0 8px #00ff88;
+    }
+    nav {
+      background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+      padding: 10px 0;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links li {
+      margin: 10px;
+      padding: 10px 20px;
+      border: 2px solid #00ff88;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #00ff88;
+    }
+    .nav-links li a {
+      color: #00ff88;
+      text-decoration: underline;
+      font-weight: bold;
+      font-size: 1.1rem;
     }
   </style>
 </head>
 <body>
-  <!-- Sticky Container for Header and Navigation -->
-  <div class="sticky-container">
-    <!-- Header Section -->
-    <header>
-      <div class="header-container">
-        <h1 class="site-title">Best Budz</h1>
-        <div class="header-actions">
-          <!-- Header actions (if needed) -->
-          <div class="header-actions">
-            <!-- Other header actions... -->
-            <button id="cart-button" class="cart-button">Cart</button>
-          </div>
-      </div>
-    </header>
-    <!-- Navigation Section -->
-    <nav id="navbar">
-      <div class="hamburger" id="hamburger">&#9776;</div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
-    </nav>
+  
+<header style="background: linear-gradient(to right, #111, #222); padding: 40px 0; box-shadow: 0 0 20px #00ff88;">
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <img src="Images/logo.png" alt="Best Budz Logo" style="height: 80px; margin-right: 20px;" />
+    <h1 class="site-title" style="color: #00ff88; text-shadow: 0 0 10px #00ff88; font-size: 2.5rem;">Best Budz</h1>
   </div>
+</header>
 
-  <!-- Script for Hamburger Menu -->
-  <script src="script.js"></script>
+  <nav id="navbar">
+    <ul class="nav-links" id="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
 
-  <!-- Main Content Section -->
-  <main>
-    <!-- Welcome Section -->
-    <section id="welcome">
-      <h2>Welcome to Best Budz</h2>
-      <p>Your one-stop shop for high-quality products!</p>
-      <a href="products.html" class="explore-btn">*Forums*</a>
-    </section>
-
-    <!-- About/Community Section -->
-    <section id="community">
-      <h3>Let's Be Budz!</h3>
-      <p>
-        At Best Budz, we're all about building a community of friends who can count on each other.
-        Got questions? Need help? Our team is available 24/7 to assist you. Message us anytime, and we’ll get back to you as soon as possible.
-        We’re here for you, because we're all Budz!
-      </p>
-    </section>
-
-    <!-- TradingView Widget (First) -->
-    <div class="tradingview-widget-container">
-      <div class="tradingview-widget-container__widget"></div>
-      <div class="tradingview-widget-copyright">
-        <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
-          <span class="blue-text">Track all markets on TradingView</span>
-        </a>
+  <main class="products-section">
+    <h2>Welcome to Best Budz</h2>
+    <p>High-quality, lab-tested hemp and CBD products delivered with style. Explore our trusted selections and join a thriving community built on wellness and trust.</p>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="Images/welcome1.jpg" alt="Explore Products">
+        <div class="product-title">Delta-8 Gummies</div>
+        <div class="product-price">Delicious & effective</div>
+        <a href="products.html" class="explore-btn">Shop Now</a>
       </div>
-      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-      ({"symbol": "BINANCE:BTCUSD", "width": "100%", "height": "400", "locale": "en", "dateRange": "12M", "colorTheme": "light", "isTransparent": true, "autosize": true, "largeChartUrl": ""});
-      </script>
-    </div>
-
-    <!-- About Our Website Section -->
-    <section id="about-website">
-      <h3>About Our Website</h3>
-      <p>
-        Welcome to Best Budz! At Best Budz, our customers are our top priority. That’s why we’re dedicated to offering high-quality products at prices you can afford.
-        We believe everyone deserves the best without breaking the bank, and we’re here to deliver just that.
-        We proudly support crypto payments, Visa, and credit cards for your convenience.
-      </p>
-    </section>
-
-    <!-- TradingView Widget (Second) -->
-    <div class="tradingview-widget-container">
-      <div class="tradingview-widget-container__widget"></div>
-      <div class="tradingview-widget-copyright">
-        <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
-          <span class="blue-text">Track all markets on TradingView</span>
-        </a>
+      <div class="product-card">
+        <img src="Images/community.jpg" alt="Community">
+        <div class="product-title">Join the Budz</div>
+        <div class="product-price">Contact our team 24/7</div>
+        <a href="contact.html" class="explore-btn">Reach Out</a>
       </div>
-      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-      ({"symbol": "BINANCE:TONUSD", "width": "100%", "height": "400", "locale": "en", "dateRange": "12M", "colorTheme": "light", "isTransparent": true, "autosize": true, "largeChartUrl": ""});
-      </script>
+      <div class="product-card">
+        <img src="Images/compliance.jpg" alt="Compliance">
+        <div class="product-title">100% Legal</div>
+        <div class="product-price">Compliant & lab-tested</div>
+        <a href="#legal-compliance" class="explore-btn">Know Your Rights</a>
+      </div>
     </div>
-
-    <!-- Legal Compliance Section -->
-    <section id="legal-compliance">
-      <h3>Legal Compliance</h3>
-      <p>
-        Legal Compliance of Our Hemp Products<br><br>
-        All our hemp products comply with the 2018 Farm Bill and applicable state laws. They contain less than 0.3% Delta-9 THC on a dry weight basis, making them federally legal in the United States.<br><br>
-        We source our hemp from licensed growers and conduct rigorous testing on all products to ensure quality and compliance with federal standards. Certificates of Analysis (COAs) are available for every product, providing transparency about their cannabinoid content.<br><br>
-        <strong>Important Notice:</strong><br>
-        It is your responsibility to understand the laws in your state or jurisdiction. By purchasing from this website, you confirm that you are at least 18 years old (or 21 in applicable states) and that hemp-derived products are legal in your area.
-        Our products are not intended to diagnose, treat, cure, or prevent any disease.
-        Keep out of reach of children.
-        If you have questions about the legality of our products, feel free to contact us. We are here to provide clarity and ensure your peace of mind.
-      </p>
-    </section>
-    
-    <!-- Contributions Section -->
-    <section id="contributions">
-      <h2>Big thx to all our Budz</h2>
-      <a href="contribution.html" class="explore-btn">Contributions</a>
-    </section>
   </main>
-
-  <!-- Footer Section -->
-  <footer>
-    <p>&copy; 2024 | All Rights Reserved.</p>
-    <a href="terms-of-service.html" class="tos-link">Terms of Service</a>
-  </footer>
-
-  <!-- Shopping Cart Sidebar -->
-  <div id="cart-sidebar" class="cart-sidebar">
-    <button id="close-cart" class="close-cart-btn">X</button>
-    <h2>Shopping Cart</h2>
-    <div id="cart-details"></div>
+  
+<footer style="border-top: 3px solid #00ff88; box-shadow: 0 0 15px #00ff88; margin-top: 40px;">
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 30px 20px; background: linear-gradient(to right, #0f0f0f, #1a1a1a);">
+    <div style="text-align: center;">
+      <p style="font-size: 1.2rem;">Follow Best Budz</p>
+      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 10px;">
+        <a href="https://instagram.com" target="_blank" style="color: #00ff88; text-decoration: none;">Instagram</a>
+        <a href="https://twitter.com" target="_blank" style="color: #00ff88; text-decoration: none;">Twitter</a>
+        <a href="https://facebook.com" target="_blank" style="color: #00ff88; text-decoration: none;">Facebook</a>
+        <a href="https://tiktok.com" target="_blank" style="color: #00ff88; text-decoration: none;">TikTok</a>
+        <a href="https://youtube.com" target="_blank" style="color: #00ff88; text-decoration: none;">YouTube</a>
+        <a href="https://discord.gg" target="_blank" style="color: #00ff88; text-decoration: none;">Discord</a>
+      </div>
+    </div>
+    <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; font-size: 0.95rem;">
+      <a href="contribution.html" style="color: #00ff88; text-decoration: underline;">Contributions</a>
+      <a href="terms-of-service.html" style="color: #00ff88; text-decoration: underline;">Terms of Service</a>
+    </div>
+    <div style="text-align: center; font-size: 0.9rem; color: #ccc;">
+      <p>&copy; 2024 Best Budz. All rights reserved.</p>
+    </div>
   </div>
+</footer>
 
-  <!-- Snipcart Integration -->
-  <div hidden id="snipcart" data-api-key="ZGFhOTc3ZTYtYzdhOS00N2U0LTllNDUtM2QxMDY4ZTA0NWIyNjM4NjQ0Mzg1NTY4NzMxMTkz"></div>
-  <!-- Snipcart JavaScript -->
-  <script src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
-
-  <!-- Custom JavaScript for Cart Sidebar -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const cartButton = document.getElementById("cart-button");
-      const cartSidebar = document.getElementById("cart-sidebar");
-      const closeCart = document.getElementById("close-cart");
-
-      if (cartButton) {
-        // Open cart sidebar
-        cartButton.addEventListener("click", () => {
-          cartSidebar.classList.add("visible");
-        });
-      }
-
-      // Close cart sidebar
-      if (closeCart) {
-        closeCart.addEventListener("click", () => {
-          cartSidebar.classList.remove("visible");
-        });
-      }
-    });
-  </script>
-
-  <!-- FormSpree Integration -->
-  <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
-  <script>
-    /* Initialize Formspree form button */
-    window.formbutton = window.formbutton || function () {
-      (formbutton.q = formbutton.q || []).push(arguments);
-    };
-
-    /* Customize Formspree button */
-    formbutton("create", {
-      action: "https://formspree.io/f/xvgonobw", // Replace with your actual Form ID
-      title: "Contact Us",
-      fields: [
-        {
-          type: "email",
-          label: "Email:",
-          name: "email",
-          required: true,
-          placeholder: "your@email.com"
-        },
-        {
-          type: "textarea",
-          label: "Message:",
-          name: "message",
-          placeholder: "What's on your mind?"
-        },
-        { type: "submit" }
-      ],
-      styles: {
-        title: {
-          backgroundColor: "#333",
-          color: "white",
-          fontSize: "18px",
-          fontWeight: "bold",
-          textTransform: "uppercase",
-          letterSpacing: "2px",
-          borderRadius: "0px",
-          padding: "10px"
-        },
-        button: {
-          backgroundColor: "#F1B6B6",
-          color: "#333",
-          border: "none",
-          fontSize: "32px",
-          fontWeight: "bold",
-          padding: "10px 20px",
-          borderRadius: "50px",
-          cursor: "pointer"
-        }
-      },
-      position: "bottom-right", // Adjust the position if needed
-      initiallyVisible: false  // Don't show button on load
-    });
-  </script>
 </body>
 </html>
