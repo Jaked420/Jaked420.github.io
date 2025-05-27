@@ -86,7 +86,6 @@
       flex-wrap: wrap;
       margin: 0;
       padding: 0;
-      transition: max-height 0.3s;
     }
     .nav-links li {
       margin: 10px;
@@ -101,65 +100,19 @@
       font-weight: bold;
       font-size: 1.1rem;
     }
-    /* Hamburger styles */
-    .nav-toggle {
-      display: none;
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      z-index: 100;
-    }
-    .nav-toggle span,
-    .nav-toggle span:before,
-    .nav-toggle span:after {
-      display: block;
-      background: #00ff88;
-      height: 4px;
-      width: 30px;
-      border-radius: 2px;
-      position: relative;
-      transition: all 0.3s;
-    }
-    .nav-toggle span:before,
-    .nav-toggle span:after {
-      content: '';
-      position: absolute;
-      left: 0;
-    }
-    .nav-toggle span:before {
-      top: -10px;
-    }
-    .nav-toggle span:after {
-      top: 10px;
-    }
     @media (max-width: 700px) {
       .nav-links {
         flex-direction: column;
         align-items: center;
-        max-height: 0;
-        overflow: hidden;
         width: 100%;
+        position: static;
         background: linear-gradient(to right, #0f0f0f, #1a1a1a);
-        position: absolute;
-        left: 0;
-        top: 100%;
-        z-index: 99;
         border-bottom: 2px solid #00ff88;
-      }
-      .nav-links.open {
-        max-height: 500px;
-        padding-bottom: 10px;
-      }
-      .nav-toggle {
-        display: block;
       }
     }
     /* Footer fix: always full width, no offset */
     footer {
-      width: 100vw;
+      width: 100%;
       left: 0;
       right: 0;
       margin: 0;
@@ -191,9 +144,6 @@
 </header>
 
 <nav id="navbar">
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-    <span></span>
-  </button>
   <ul class="nav-links" id="nav-links">
     <li><a href="home.html">Home</a></li>
     <li><a href="products.html">Products</a></li>
@@ -250,13 +200,5 @@
   </div>
 </footer>
 
-<script>
-  // Hamburger menu toggle
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('nav-links');
-  navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-  });
-</script>
 </body>
 </html>
