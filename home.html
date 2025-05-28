@@ -1,94 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Home - Best Budz</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
   <style>
     html, body {
       width: 100%;
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      overflow-x: hidden; /* Prevent horizontal scroll */
     }
-
     body {
       background-color: rgb(44, 41, 41);
       color: white;
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
-
-    header {
-      background: linear-gradient(to right, #111, #222);
-      padding: 40px 0;
-      box-shadow: 0 0 20px #00ff88;
+    .products-section {
+      padding: 60px 20px;
+      text-align: center;
     }
-
-    header .logo-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .products-section h2 {
+      font-size: 2.5rem;
+      text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88;
+      margin-bottom: 20px;
     }
-
-    header img {
-      height: 80px;
+    .products-section p {
+      max-width: 700px;
+      margin: 0 auto 40px;
+      font-size: 1.2rem;
     }
-
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .product-card {
+      background: #222;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 10px #00ff88;
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+    .product-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    .product-title {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .product-price {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+    .explore-btn {
+      background: linear-gradient(90deg, #00ff88, #39ff14);
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      display: inline-block;
+      font-weight: bold;
+      box-shadow: 0 0 8px #00ff88;
+    }
     nav {
       background: linear-gradient(to right, #0f0f0f, #1a1a1a);
       padding: 10px 0;
       position: relative;
     }
-
-    .nav-toggle {
-      display: none;
-      position: absolute;
-      top: 12px;
-      right: 20px;
-      width: 30px;
-      height: 30px;
-      cursor: pointer;
-      z-index: 10;
-      background: none;
-      border: none;
-    }
-
-    .nav-toggle span,
-    .nav-toggle span::before,
-    .nav-toggle span::after {
-      display: block;
-      background: #00ff88;
-      height: 4px;
-      width: 100%;
-      border-radius: 2px;
-      position: absolute;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .nav-toggle span {
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .nav-toggle span::before {
-      content: '';
-      top: -10px;
-    }
-
-    .nav-toggle span::after {
-      content: '';
-      top: 10px;
-    }
-
     .nav-links {
       list-style: none;
       display: flex;
+      flex-direction: row;
       justify-content: center;
+      flex-wrap: wrap;
       margin: 0;
       padding: 0;
     }
-
     .nav-links li {
       margin: 10px;
       padding: 10px 20px;
@@ -96,122 +95,103 @@
       border-radius: 8px;
       box-shadow: 0 0 10px #00ff88;
     }
-
     .nav-links li a {
       color: #00ff88;
       text-decoration: underline;
       font-weight: bold;
       font-size: 1.1rem;
     }
-
     @media (max-width: 700px) {
+      /* Remove nav-toggle styles */
       .nav-toggle {
-        display: block;
+        display: none !important;
       }
-
       .nav-links {
         flex-direction: column;
         align-items: center;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        background: #0f0f0f;
-      }
-
-      .nav-links.open {
-        max-height: 300px;
-      }
-
-      .nav-links li {
-        margin: 10px 0;
         width: 100%;
+        justify-content: center;
+        background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+        border-bottom: 2px solid #00ff88;
+        position: static;
+        max-height: none;
+        overflow: visible;
+        padding-bottom: 10px;
+      }
+      .nav-links li {
+        width: 90%;
+        margin: 10px 0;
         text-align: center;
       }
     }
-
-    .products-section {
-      padding: 40px 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .product-card {
-      background-color: #1c1c1c;
-      border: 2px solid #00ff88;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #00ff88;
-      margin: 20px;
-      padding: 20px;
-      width: 300px;
-      text-align: center;
-    }
-
-    .product-card img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-
-    .product-card h3 {
-      margin: 10px 0;
-      color: #00ff88;
-    }
-
-    .product-card p {
-      font-size: 1rem;
-    }
-
+    /* Footer fix: always full width, no offset */
     footer {
-      background: linear-gradient(to right, #111, #222);
-      text-align: center;
-      padding: 20px;
-      box-shadow: 0 0 20px #00ff88;
-    }
-
-    footer p {
+      width: 100vw;
+      left: 0;
+      right: 0;
       margin: 0;
+      position: relative;
+      box-sizing: border-box;
+      border-top: 3px solid #00ff88;
+      box-shadow: 0 0 15px #00ff88;
+      margin-top: 40px;
+      background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+      overflow-x: hidden;
+    }
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 30px 20px;
+      width: 100%;
+      box-sizing: border-box;
     }
   </style>
 </head>
 <body>
+  
+<header style="background: linear-gradient(to right, #111, #222); padding: 40px 0; box-shadow: 0 0 20px #00ff88;">
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <img src="Images/footer.png" alt="Best Budz Logo" style="height: 80px; margin-right: 20px;" />
+    <h1 class="site-title" style="color: #00ff88; text-shadow: 0 0 10px #00ff88; font-size: 2.5rem;"></h1>
+  </div>
+</header>
 
-  <header>
-    <div class="logo-container">
-      <img src="Images/footer.png" alt="Best Budz Logo">
-    </div>
-  </header>
+<nav id="navbar">
+  <ul class="nav-links" id="nav-links">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
 
-  <nav>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
-      <span></span>
-    </button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="home.html">Home</a></li>
-      <li><a href="products.html">Products</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-    </ul>
-  </nav>
-
-  <main class="products-section">
+<main class="products-section">
+  <h2>Welcome to Best Budz</h2>
+  <p>High-quality, lab-tested hemp and CBD products delivered with style. Explore our trusted selections and join a thriving community built on wellness and trust.</p>
+  <div class="product-grid">
     <div class="product-card">
-      <img src="Images/product1.jpg" alt="Product 1">
-      <h3>Delta-8 Vape Cartridge</h3>
-      <p>Experience smooth, relaxing effects with our premium Delta-8 carts.</p>
-    </div>
-    <div class="product-card">
-      <img src="Images/product2.jpg" alt="Product 2">
-      <h3>HHC Disposable Vape</h3>
-      <p>Potent, flavorful hits in a convenient, ready-to-use disposable.</p>
+      <img src="Images/welcome1.jpg" alt="Explore Products">
+      <div class="product-title">Delta-8 Gummies</div>
+      <div class="product-price">Delicious & effective</div>
+      <a href="products.html" class="explore-btn">Shop Now</a>
     </div>
     <div class="product-card">
-      <img src="Images/product3.jpg" alt="Product 3">
-      <h3>THC-P Live Resin Cart</h3>
-      <p>Ultra-potent live resin infused with strain-specific terpenes.</p>
+      <img src="Images/community.jpg" alt="Community">
+      <div class="product-title">Join the Budz</div>
+      <div class="product-price">Contact our team 24/7</div>
+      <a href="contact.html" class="explore-btn">Reach Out</a>
     </div>
-  </main>
-
-  <footer>
+    <div class="product-card">
+      <img src="Images/compliance.jpg" alt="Compliance">
+      <div class="product-title">100% Legal</div>
+      <div class="product-price">Compliant & lab-tested</div>
+      <a href="#legal-compliance" class="explore-btn">Know Your Rights</a>
+    </div>
+  </div>
+</main>
+  
+<footer>
   <div class="footer-content">
     <img src="Images/footer.png" alt="Footer Logo" style="height: 60px; margin-bottom: 10px;" />
     <div style="text-align: center;">
@@ -230,20 +210,10 @@
       <a href="terms-of-service.html" style="color: #00ff88; text-decoration: underline;">Terms of Service</a>
     </div>
     <div style="text-align: center; font-size: 0.9rem; color: #ccc;">
-  <p style="margin-top: 1em;">&copy; 2024 Best Budz. All rights reserved.</p>
-</div>
-
+      <p>&copy; 2024 Best Budz. All rights reserved.</p>
+    </div>
   </div>
 </footer>
 
-  <script>
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('nav-links');
-
-    navToggle.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', isOpen);
-    });
-  </script>
 </body>
 </html>
