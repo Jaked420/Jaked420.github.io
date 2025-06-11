@@ -139,9 +139,10 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2px;
+  padding: 20px; /* Increased padding for a larger footer */
   background-color: #333;
   color: white;
+  font-size: 1.2rem; /* Increase base font size for better readability */
 }
 
 /* Base image size (mobile and tablet) */
@@ -156,6 +157,17 @@ footer {
     height: 100px; /* Adjust to the size you want for laptops */
   }
 }
+
+/* Larger font size for social links and footer text */
+footer p, footer a {
+  font-size: 1.4rem; /* Increased font size */
+}
+
+/* Optional: Increase space between footer sections */
+footer .footer-content {
+  margin-top: 20px; /* Space between sections */
+}
+
 
 /* Shopping Cart - Hidden by Default */
 .cart-sidebar {
