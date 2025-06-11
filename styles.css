@@ -144,19 +144,18 @@ footer {
   color: white;
 }
 
-/* Base image size (mobile) */
+/* Base image size (mobile and tablet) */
 .footer-logo {
   height: 60px;
   margin-bottom: 10px;
 }
 
-/* Larger image for desktop/laptop */
-@media (min-width: 768px) {
+/* Larger image for laptop view (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
   .footer-logo {
-    height: 100px; /* Adjust this to your preferred size */
+    height: 100px; /* Adjust to the size you want for laptops */
   }
 }
-
 
 /* Shopping Cart - Hidden by Default */
 .cart-sidebar {
