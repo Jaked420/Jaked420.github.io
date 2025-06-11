@@ -144,6 +144,20 @@ footer {
   color: white;
 }
 
+/* Base image size (mobile) */
+.footer-logo {
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+/* Larger image for desktop/laptop */
+@media (min-width: 768px) {
+  .footer-logo {
+    height: 100px; /* Adjust this to your preferred size */
+  }
+}
+
+
 /* Shopping Cart - Hidden by Default */
 .cart-sidebar {
   position: fixed;
