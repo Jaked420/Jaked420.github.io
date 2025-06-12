@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home - Best Budz</title>
+  <title>Contact Us – Best Budz</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -16,7 +16,7 @@
 </header>
 
 <nav id="navbar">
-  <ul class="nav-links" id="nav-links">
+  <ul class="nav-links">
     <li><a href="home.html">Home</a></li>
     <li><a href="products.html">Products</a></li>
     <li><a href="contact.html">Contact Us</a></li>
@@ -24,28 +24,25 @@
 </nav>
 
 <main class="products-section">
-  <h2>Welcome to Best Budz</h2>
-  <p>High-quality, lab-tested hemp and CBD products delivered with style. Explore our trusted selections and join a thriving community built on wellness and trust.</p>
-  <div class="product-grid">
-    <div class="product-card">
-      <img src="Images/welcome1.jpg" alt="Explore Products">
-      <div class="product-title">Delta-8 Gummies</div>
-      <div class="product-price">Delicious & effective</div>
-      <a href="products.html" class="explore-btn">Shop Now</a>
-    </div>
-    <div class="product-card">
-      <img src="Images/community.jpg" alt="Community">
-      <div class="product-title">Join the Budz</div>
-      <div class="product-price">Contact our team 24/7</div>
-      <a href="contact.html" class="explore-btn">Reach Out</a>
-    </div>
-    <div class="product-card">
-      <img src="Images/compliance.jpg" alt="Compliance">
-      <div class="product-title">100% Legal</div>
-      <div class="product-price">Compliant & lab-tested</div>
-      <a href="#legal-compliance" class="explore-btn">Know Your Rights</a>
-    </div>
-  </div>
+  <h2>Get in Touch</h2>
+  <p>We’re here for you 24/7. Reach out anytime with questions, custom orders, or partnership inquiries.</p>
+
+  <!-- modify this form HTML and place wherever you want your form -->
+<form
+  action="https://formspree.io/f/mblyozre"
+  method="POST"
+  enctype="multipart/form-data"
+>
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your file:
+    <input type="file" name="upload">
+  </label>
+  <button type="submit">Send</button>
+</form>
 </main>
 
 <footer>

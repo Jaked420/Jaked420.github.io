@@ -3,16 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Products - Best Budz</title>
+  <title>Best Budz</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    html, body {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      overflow-x: hidden; /* Prevent horizontal scroll */
-    }
     body {
       background-color: rgb(44, 41, 41);
       color: white;
@@ -170,17 +163,15 @@
     }
   </style>
 </head>
-<body>
-  
-<header style="background: linear-gradient(to right, #111, #222); padding: 40px 0; box-shadow: 0 0 20px #00ff88;">
+<header style="padding: 40px 0; box-shadow: 0 0 25px #00ff88;">
   <div style="display: flex; justify-content: center; align-items: center;">
-    <img src="Images/logo.png" alt="Best Budz Logo" style="height: 80px; margin-right: 20px;" />
-    <h1 class="site-title" style="color: #00ff88; text-shadow: 0 0 10px #00ff88; font-size: 2.5rem;">Best Budz</h1>
+    <img src="Images/header.png" alt="Best Budz Logo" style="height: 80px; margin-right: 20px;" />
+    <h1 class="site-title" style="color: #00ff88; text-shadow: 0 0 10px #00ff88; font-size: 2.5rem;"></h1>
   </div>
 </header>
+<body>
 
 <nav id="navbar">
-  <!-- Removed nav-toggle button -->
   <ul class="nav-links" id="nav-links">
     <li><a href="home.html">Home</a></li>
     <li><a href="products.html">Products</a></li>
@@ -214,7 +205,7 @@
   
 <footer>
   <div class="footer-content">
-    <img src="Images/footer.png" alt="Footer Logo" style="height: 100px; margin-bottom: 10px;" />
+    <img src="Images/footer.png" alt="Footer Logo" style="height: 60px; margin-bottom: 10px;" />
     <div style="text-align: center;">
       <p style="font-size: 1.2rem;">Follow Best Budz</p>
       <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 10px;">
@@ -236,7 +227,11 @@
   </div>
 </footer>
 
-<!-- Removed nav-toggle JS -->
+<div style="text-align:center; margin-top: 40px;">
+  <a href="https://commerce.coinbase.com/checkout/YOUR-CHECKOUT-CODE" target="_blank">
+    <img src="https://commerce.coinbase.com/assets/button-white.svg" alt="Pay with Crypto" style="width:200px;" />
+  </a>
+</div>
 
 </body>
 </html>
