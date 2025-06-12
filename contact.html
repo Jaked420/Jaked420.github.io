@@ -2,22 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact Us – Best Budz</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<header style="padding: 40px 0; box-shadow: 0 0 25px #00ff88;">
-  <div style="display: flex; justify-content: center; align-items: center;">
-    <img src="Images/header.png" alt="Best Budz Logo" style="height: 80px; margin-right: 20px;" />
-    <h1 class="site-title" style="color: #00ff88; text-shadow: 0 0 10px #00ff88; font-size: 2.5rem;"></h1>
+<header>
+  <div class="header-container">
+    <a href="home.html" class="header-link">
+      <img src="Images/header.png" alt="Best Budz Logo" class="header-logo" />
+    </a>
+    <h1 class="site-title" style="color:#00ff88; text-shadow: 0 0 10px #00ff88;">Best Budz</h1>
   </div>
 </header>
 
 <nav id="navbar">
   <ul class="nav-links">
-    <li><a href="home.html">Home</a></li>
     <li><a href="products.html">Products</a></li>
     <li><a href="contact.html">Contact Us</a></li>
   </ul>
@@ -27,22 +28,15 @@
   <h2>Get in Touch</h2>
   <p>We’re here for you 24/7. Reach out anytime with questions, custom orders, or partnership inquiries.</p>
 
-  <!-- modify this form HTML and place wherever you want your form -->
-<form
-  action="https://formspree.io/f/mblyozre"
-  method="POST"
-  enctype="multipart/form-data"
->
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your file:
-    <input type="file" name="upload">
-  </label>
-  <button type="submit">Send</button>
-</form>
+  <form action="https://formspree.io/f/mblyozre" method="POST" enctype="multipart/form-data" class="contact-form">
+    <label for="email">Your email:</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="upload">Your file:</label>
+    <input type="file" id="upload" name="upload" />
+
+    <button type="submit">Send</button>
+  </form>
 </main>
 
 <footer>

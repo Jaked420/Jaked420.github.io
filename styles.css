@@ -44,6 +44,7 @@ header {
   color: white;
   padding: 40px 0;
   box-shadow: 0 0 20px #00ff88;
+  background: transparent;
   background-size: cover;
   background-position: center;
 }
@@ -51,11 +52,35 @@ header {
 /* Header Container Styling */
 .header-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* centers logo and title horizontally */
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+/* Make the header logo image clickable and style it */
+.header-link {
+  display: inline-block;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.header-logo {
+  height: 80px;
+  transition: transform 0.2s ease;
+}
+
+.header-logo:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Site title style */
+.site-title {
+  font-size: 2.5rem;
+  color: #00ff88;
+  text-shadow: 0 0 10px #00ff88;
 }
 
 /* Navigation Styling */
@@ -83,7 +108,7 @@ nav {
   border-top: 3px solid black;
   border-bottom: 2px solid #00ff88;
   z-index: 1000;
-  position: sticky;
+  position: static;
   top: 0;
 }
 
