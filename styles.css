@@ -314,3 +314,16 @@ footer a:focus {
 .content {
   padding: 20px;
 }
+
+footer a,
+footer a:visited,
+footer a:link,
+footer a:active {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #00ff88;
+  text-shadow: 0 0 8px #00ff88, 0 0 16px #00ff88;
+}
