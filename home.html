@@ -13,13 +13,25 @@
       box-sizing: border-box;
       overflow-x: hidden; /* Prevent horizontal scroll */
     }
-    body {
-      background-color: rgb(44, 41, 41);
-      color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+   /* Remove backgrounds from other containers */
+header, nav, footer, main, section {
+  background: transparent !important;
+}
+
+/* Set one background image on the body */
+body {
+  background-image: url('Images/weed-nav.png') !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important; /* or '100% 100%' if you want to stretch */
+  background-position: center center !important;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+
     .products-section {
       padding: 60px 20px;
       text-align: center;
@@ -81,11 +93,7 @@
       box-shadow: 0 0 20px #00ff88, 0 0 40px #00ff88;
       filter: brightness(1.1);
     }
-    nav {
-      background: linear-gradient(to right, #0f0f0f, #1a1a1a);
-      padding: 10px 0;
-      position: relative;
-    }
+    
     .nav-links {
       list-style: none;
       display: flex;
@@ -123,47 +131,26 @@
     }
     
 
-    /* Footer fix: always full width, no offset */
-    footer {
-      width: 100vw;
-      left: 0;
-      right: 0;
-      margin: 0;
-      position: relative;
-      box-sizing: border-box;
-      border-top: 3px solid #00ff88;
-      box-shadow: 0 0 15px #00ff88;
-      margin-top: 40px;
-      background: linear-gradient(to right, #0f0f0f, #1a1a1a);
-      overflow-x: hidden;
-    }
-    .footer-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      padding: 30px 20px;
-      width: 100%;
-      box-sizing: border-box;
-    }
-    .footer-content a {
-      transition: text-shadow 0.3s, color 0.3s;
-    }
-    .footer-content a:hover,
-    .footer-content a:focus {
-      color: #00ff88;
-      text-shadow: 0 0 8px #00ff88, 0 0 16px #00ff88;
-    }
+    
   </style>
 </head>
 <body>
   
-<header style="background: linear-gradient(to right, #111, #222); padding: 40px 0; box-shadow: 0 0 20px #00ff88;">
+<header style="
+ background-image: url('Images/weed-nav.png');
+  padding: 40px 0;
+  box-shadow: 0 0 25px #00ff88;
+">
   <div style="display: flex; justify-content: center; align-items: center;">
     <img src="Images/header.png" alt="Best Budz Logo" style="height: 80px; margin-right: 20px;" />
-    <h1 class="site-title" style="color: #00ff88; text-shadow: 0 0 10px #00ff88; font-size: 2.5rem;"></h1>
+    <h1 class="site-title" style="color: #00ff88; text-shadow: 0 0 10px #00ff88; font-size: 2.5rem;">
+     
+    </h1>
   </div>
 </header>
+
+
+
 
 <nav id="navbar">
   <ul class="nav-links" id="nav-links">
@@ -200,27 +187,28 @@
   
 <footer>
   <div class="footer-content">
-    <img src="Images/footer.png" alt="Footer Logo" style="height: 100px; margin-bottom: 10px;" />
+    <img src="Images/footer.png" alt="Footer Logo" class="footer-logo" />
     <div style="text-align: center;">
-      <p style="font-size: 1.2rem;">Follow Best Budz</p>
+      <p>Follow Best Budz</p>
       <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 10px;">
-        <a href="https://instagram.com" target="_blank" style="color: #00ff88; text-decoration: none;">Instagram</a>
-        <a href="https://twitter.com" target="_blank" style="color: #00ff88; text-decoration: none;">Twitter</a>
-        <a href="https://facebook.com" target="_blank" style="color: #00ff88; text-decoration: none;">Facebook</a>
-        <a href="https://tiktok.com" target="_blank" style="color: #00ff88; text-decoration: none;">TikTok</a>
-        <a href="https://youtube.com" target="_blank" style="color: #00ff88; text-decoration: none;">YouTube</a>
-        <a href="https://discord.gg" target="_blank" style="color: #00ff88; text-decoration: none;">Discord</a>
+        <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://tiktok.com" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://discord.gg" target="_blank" rel="noopener">Discord</a>
       </div>
     </div>
     <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; font-size: 0.95rem;">
-      <a href="contribution.html" style="color: #00ff88; text-decoration: underline;">Contributions</a>
-      <a href="terms-of-service.html" style="color: #00ff88; text-decoration: underline;">Terms of Service</a>
+      <a href="contribution.html">Contributions</a>
+      <a href="terms-of-service.html">Terms of Service</a>
     </div>
     <div style="text-align: center; font-size: 0.9rem; color: #ccc;">
       <p>&copy; 2024 Best Budz. All rights reserved.</p>
     </div>
   </div>
 </footer>
+
 
 </body>
 </html>
