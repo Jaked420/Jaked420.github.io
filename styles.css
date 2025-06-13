@@ -1,4 +1,4 @@
-/* Reset margins and paddings for header, nav, and nav ul */
+why doesnt it look  right  i want the media player above the product grid too >>> /* Reset margins and paddings for header, nav, and nav ul */
 header,
 nav,
 nav ul {
@@ -315,15 +315,195 @@ footer a:focus {
   padding: 20px;
 }
 
-footer a,
-footer a:visited,
-footer a:link,
-footer a:active {
+/* Keep your existing body background to weed-nav.png */
+body {
+  background-image: url('Images/weed-nav.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
   color: white;
-  text-decoration: none;
+  overflow-x: hidden;
 }
 
-footer a:hover {
-  color: #00ff88;
-  text-shadow: 0 0 8px #00ff88, 0 0 16px #00ff88;
+/* MEDIA PLAYER styling with jake.jpg background only here */
+
+.media-player {
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 15px;
+  box-shadow: 0 0 25px #00ff88;
+  overflow: hidden;
+  background: #111;
+}
+
+/* Separate album cover as top section */
+.album-art {
+  width: 100%;
+  height: 300px;
+  background: url('Images/jake.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+/* Controls section underneath */
+.media-overlay {
+  width: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  border-top: 1px solid rgba(255,255,255,0.2);
+  text-align: center;
+}
+
+.track-title {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px black;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.media-btn {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #00ff88, #00cc66);
+  color: #000;
+  cursor: pointer;
+  box-shadow: 0 0 12px #00ff88;
+  transition: all 0.3s ease;
+}
+
+#seekBar {
+  width: 100%;
+  margin-top: 10px;
+  height: 8px;
+  border-radius: 5px;
+  background: #00ff88;
+}
+
+/* PRODUCTS SECTION */
+
+.products-section {
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto 60px auto;
+}
+
+.products-section h2 {
+  font-size: 2.5rem;
+  text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88;
+  margin-bottom: 20px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: #222;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 10px #00ff88;
+  transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00ff88, 0 0 40px #00ff88;
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.explore-btn {
+  background: linear-gradient(90deg, #00ff88, #39ff14);
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: bold;
+  box-shadow: 0 0 8px #00ff88;
+  transition: box-shadow 0.3s, filter 0.3s;
+}
+
+.explore-btn:hover,
+.explore-btn:focus {
+  box-shadow: 0 0 20px #00ff88, 0 0 40px #00ff88;
+  filter: brightness(1.1);
+}
+
+/* Responsive tweaks if needed */
+@media (max-width: 640px) {
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  .media-btn {
+    flex: 1 1 40%;
+    max-width: 45%;
+    font-size: 14px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  #seekBar {
+    width: 100%;
+    margin-top: 10px;
+    box-sizing: border-box;
+  }
+
+  .media-overlay {
+    padding: 15px;
+    width: 100%;
+  }
+
+  .album-art {
+    height: 200px;
+  }
+
+  .media-player {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
 }

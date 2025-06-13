@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home - Best Budz</title>
-  <!-- Your custom CSS -->
+
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Your Custom CSS -->
   <link rel="stylesheet" href="styles.css" />
-
- <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
-
 </head>
-
 <body>
 
 <header>
@@ -33,13 +33,36 @@
     <li><a href="contact.html">Contact Us</a></li>
   </ul>
 </nav>
+<main>
+ <main>
+  <div class="media-player">
+  <div class="album-art"></div>
+
+  <div class="media-overlay">
+    <p class="track-title" id="trackTitle">🎶 Loading...</p>
+    <audio id="audioTrack" src=""></audio>
+
+    <div class="controls">
+      <button id="prevBtn" class="media-btn">⏮️ Prev</button>
+      <button id="playBtn" class="media-btn">▶️ Play</button>
+      <button id="pauseBtn" class="media-btn">⏸️ Pause</button>
+      <button id="nextBtn" class="media-btn">⏭️ Next</button>
+      <input type="range" id="seekBar" value="0" />
+    </div>
+  </div>
+</div>
+
+  </div>
+</main>
+
+  <!-- PRODUCTS GRID -->
 
 <main class="products-section">
   <h2>Welcome to Best Budz</h2>
   <p>High-quality, lab-tested hemp and CBD products delivered with style. Explore our trusted selections and join a thriving community built on wellness and trust.</p>
   <div class="product-grid">
     <div class="product-card">
-      <img src="Images/welcome1.jpg" alt="Explore Products" />
+      <img src="Images/insta.gif" alt="Explore Products" />
       <div class="product-title">Delta-8 Gummies</div>
       <div class="product-price">Delicious & effective</div>
       <a href="products.html" class="explore-btn">Shop Now</a>
@@ -51,10 +74,10 @@
       <a href="contact.html" class="explore-btn">Reach Out</a>
     </div>
     <div class="product-card">
-      <img src="Images/compliance.jpg" alt="Compliance" />
-      <div class="product-title">100% Legal</div>
-      <div class="product-price">Compliant & lab-tested</div>
-      <a href="#legal-compliance" class="explore-btn">Know Your Rights</a>
+      <img src="Images/insta.gif" alt="Compliance" />
+      <div class="product-title">Follow Me</div>
+      <div class="product-price">On my Personal Account</div>
+      <a href="instagram.html" class="explore-btn">Know Your Rights</a>
     </div>
   </div>
 </main>
@@ -95,7 +118,8 @@
   </div>
 </footer>
 
+<script src="player.js"></script>
 
 
 </body>
-</html>
+</html> 
