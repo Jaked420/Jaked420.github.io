@@ -28,62 +28,46 @@ function shuffleArray(arr) {
 }
 shuffleArray(shuffledIndexes);
 
-// Get elements
-const audio = new Audio();
+// DOM elements
+const audio = document.getElementById('audioTrack');
 const title = document.getElementById('trackTitle');
 const seekBar = document.getElementById('seekBar');
 const playBtn = document.getElementById('playBtn');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 
-let isReadyToPlay = false;
-
-// Load track
+// Load and play a track
 function loadTrack(index) {
   currentIndex = index;
   const songIndex = shuffledIndexes[index];
-  audio.src = songs[songIndex].file;
-  title.textContent = songs[songIndex].title;
+  const track = songs[songIndex];
+  audio.src = track.file;
+  title.textContent = track.title;
   seekBar.value = 0;
-  isReadyToPlay = false;
-  playBtn.textContent = '▶️';
-  audio.load();
+  audio.play().catch(err => console.log("Auto-play blocked:", err));
 }
 
-// When ready, play
-audio.addEventListener('canplay', () => {
-  isReadyToPlay = true;
-  audio.play().catch(e => console.log('Play error:', e));
-});
-
-// Play/Pause button
+// Button listeners
 playBtn.addEventListener('click', () => {
-  if (!isReadyToPlay) return;
   if (audio.paused) {
     audio.play();
   } else {
     audio.pause();
   }
 });
-
-// Update button icon
-audio.addEventListener('play', () => playBtn.textContent = '⏸️');
-audio.addEventListener('pause', () => playBtn.textContent = '▶️');
-
-// Auto next on end
-audio.addEventListener('ended', () => {
-  loadTrack((currentIndex + 1) % shuffledIndexes.length);
-});
-
-// Prev / Next buttons
 prevBtn.addEventListener('click', () => {
-  loadTrack((currentIndex - 1 + shuffledIndexes.length) % shuffledIndexes.length);
+  loadTrack((currentIndex - 1 + songs.length) % songs.length);
 });
 nextBtn.addEventListener('click', () => {
-  loadTrack((currentIndex + 1) % shuffledIndexes.length);
+  loadTrack((currentIndex + 1) % songs.length);
 });
 
-// Seekbar update
+// Icon toggle
+audio.addEventListener('play', () => playBtn.textContent = '⏸️');
+audio.addEventListener('pause', () => playBtn.textContent = '▶️');
+audio.addEventListener('ended', () => playBtn.textContent = '▶️');
+
+// Seekbar
 audio.addEventListener('timeupdate', () => {
   if (audio.duration) {
     seekBar.value = (audio.currentTime / audio.duration) * 100;
@@ -95,5 +79,5 @@ seekBar.addEventListener('input', () => {
   }
 });
 
-// Load first track
-window.addEventListener('load', () => loadTrack(0));
+// Auto load on page ready
+window.addEventListener('DOMContentLoaded', () => loadTrack(0));
