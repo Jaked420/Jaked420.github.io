@@ -1,22 +1,17 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // No need to manage the cart open/close manually if Snipcart handles it
-    const cartButton = document.getElementById("cart-button");
+window.addEventListener('scroll', () => {
+  const footer = document.getElementById('pageFooter');
+  const player = document.getElementById('mediaPlayer');
 
-    // Snipcart will handle cart opening automatically when the button is clicked
-    // Ensure your Snipcart script is loaded and working
-    if (window.Snipcart) {
-        console.log("Snipcart is loaded and working.");
-    } else {
-        console.error("Snipcart is not loaded correctly.");
-    }
+  if (!footer || !player) return;
 
-    // Get the hamburger icon and nav links for responsive menu
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
+  const footerRect = footer.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
 
-    // Toggle the 'active' class on the nav-links when the hamburger is clicked
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
+  if (footerRect.top <= windowHeight) {
+    // Footer is visible or near bottom — show player below footer
+    player.classList.add('at-footer');
+  } else {
+    // Footer not visible — fix player to bottom
+    player.classList.remove('at-footer');
+  }
 });
-

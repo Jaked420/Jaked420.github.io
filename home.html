@@ -33,27 +33,7 @@
     <li><a href="contact.html">Contact Us</a></li>
   </ul>
 </nav>
-<main>
- <main>
-  <div class="media-player">
-  <div class="album-art"></div>
 
-  <div class="media-overlay">
-    <p class="track-title" id="trackTitle">🎶 Loading...</p>
-    <audio id="audioTrack" src=""></audio>
-
-    <div class="controls">
-      <button id="prevBtn" class="media-btn">⏮️ Prev</button>
-      <button id="playBtn" class="media-btn">▶️ Play</button>
-      <button id="pauseBtn" class="media-btn">⏸️ Pause</button>
-      <button id="nextBtn" class="media-btn">⏭️ Next</button>
-      <input type="range" id="seekBar" value="0" />
-    </div>
-  </div>
-</div>
-
-  </div>
-</main>
 
   <!-- PRODUCTS GRID -->
 
@@ -82,7 +62,7 @@
   </div>
 </main>
 
-<footer>
+<footer id="pageFooter">
   <div class="footer-content">
     <img src="Images/footer.png" alt="Footer Logo" class="footer-logo" />
     <div style="text-align: center;">
@@ -118,8 +98,29 @@
   </div>
 </footer>
 
+<!-- Spacer to make room for fixed media player (optional if body padding is used) -->
+<div style="height: 60px;"></div>
+
+<!-- Media Player placed last but stays fixed -->
+<div id="mediaPlayer" class="bestbudz-player">
+  <audio id="audioTrack"></audio> <!-- ✅ Audio element -->
+  
+  <div class="track-meta" id="trackTitle">🎵 Loading...</div> <!-- ✅ Track title -->
+
+  <input type="range" id="seekBar" value="0" min="0" max="100" /> <!-- ✅ Seek bar inside player -->
+
+  <div class="controls">
+    <button id="prevBtn">⏮️</button>
+    <button id="playBtn">▶️</button>
+    <button id="nextBtn">⏭️</button>
+  </div>
+</div>
+
+</main>
+
 <script src="player.js"></script>
 
-
 </body>
-</html> 
+</html>
+
+

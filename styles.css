@@ -328,69 +328,7 @@ body {
   overflow-x: hidden;
 }
 
-/* MEDIA PLAYER styling with jake.jpg background only here */
 
-.media-player {
-  max-width: 600px;
-  margin: 40px auto;
-  border-radius: 15px;
-  box-shadow: 0 0 25px #00ff88;
-  overflow: hidden;
-  background: #111;
-}
-
-/* Separate album cover as top section */
-.album-art {
-  width: 100%;
-  height: 300px;
-  background: url('Images/jake.jpg') no-repeat center center;
-  background-size: cover;
-}
-
-/* Controls section underneath */
-.media-overlay {
-  width: 100%;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
-  border-top: 1px solid rgba(255,255,255,0.2);
-  text-align: center;
-}
-
-.track-title {
-  color: white;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  text-shadow: 0 0 8px black;
-}
-
-.controls {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.media-btn {
-  padding: 12px 20px;
-  font-size: 16px;
-  font-weight: 700;
-  border: none;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #00ff88, #00cc66);
-  color: #000;
-  cursor: pointer;
-  box-shadow: 0 0 12px #00ff88;
-  transition: all 0.3s ease;
-}
-
-#seekBar {
-  width: 100%;
-  margin-top: 10px;
-  height: 8px;
-  border-radius: 5px;
-  background: #00ff88;
-}
 
 /* PRODUCTS SECTION */
 
@@ -462,48 +400,84 @@ body {
   filter: brightness(1.1);
 }
 
-/* Responsive tweaks if needed */
+/* Base styles for media player */
+.bestbudz-player {
+  position: sticky;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  background: transparent;
+  color: #00ff88;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 10px;
+ 
+  z-index: 1000;
+  font-family: sans-serif;
+  transition: bottom 0.3s ease;
+  height: 80px; /* Make sure this matches the spacer height */
+  box-sizing: border-box;
+}
+
+/* Track info */
+.bestbudz-player .track-meta {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Seek bar */
+.bestbudz-player input[type="range"] {
+  width: 90%;
+  max-width: 600px;  /* ✅ Cap max width for large screens */
+  display: block;    /* ✅ Ensures margin auto works */
+  margin: 0 auto 8px auto;  /* ✅ Center and add bottom space */
+  accent-color: #00ff88;
+}
+
+/* Playback controls */
+.bestbudz-player .controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.bestbudz-player .controls button {
+  background: none;
+  border: none;       /* ✅ Changed from 'green' (invalid) to none */
+  color: orange;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding-bottom: 100px; /* prevent buttons from hugging the very bottom */
+}
+}
+
+/* Optional mobile tweaks */
 @media (max-width: 640px) {
-  .controls {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    padding: 0 10px;
-    box-sizing: border-box;
+  .bestbudz-player {
+    padding: 6px 8px;
+    height: 80px;
   }
 
-  .media-btn {
-    flex: 1 1 40%;
-    max-width: 45%;
-    font-size: 14px;
-    padding: 10px;
-    box-sizing: border-box;
-  }
+  .bestbudz-player .controls button {
+    font-size: 1.2rem;
+  padding-bottom: 10px; /* prevent buttons from hugging the very bottom */
+}
+}
 
-  #seekBar {
-    width: 100%;
-    margin-top: 10px;
-    box-sizing: border-box;
-  }
-
-  .media-overlay {
-    padding: 15px;
-    width: 100%;
-  }
-
-  .album-art {
-    height: 200px;
-  }
-
-  .media-player {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
+  .bestbudz-player .track-meta {
+    font-size: 0.8rem;
   }
 }
+
+/* Prevent horizontal scroll */
 html, body {
   overflow-x: hidden;
   max-width: 100vw;
+}
+
+main {
+  padding-bottom: 80px; /* Same as media player height */
 }

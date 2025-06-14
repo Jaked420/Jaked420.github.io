@@ -16,10 +16,10 @@ const songs = [
   { title: "❤️ I Love This Beat", file: "audio/i_love_this_beat.m4a" }
 ];
 
-
 let currentIndex = 0;
 const shuffledIndexes = songs.map((_, i) => i);
 
+// Shuffle the playlist
 function shuffleArray(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -28,12 +28,17 @@ function shuffleArray(arr) {
 }
 shuffleArray(shuffledIndexes);
 
-const audio = document.getElementById('audioTrack');
+// Get elements
+const audio = new Audio();
 const title = document.getElementById('trackTitle');
 const seekBar = document.getElementById('seekBar');
+const playBtn = document.getElementById('playBtn');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
 
 let isReadyToPlay = false;
 
+// Load track
 function loadTrack(index) {
   currentIndex = index;
   const songIndex = shuffledIndexes[index];
@@ -41,43 +46,54 @@ function loadTrack(index) {
   title.textContent = songs[songIndex].title;
   seekBar.value = 0;
   isReadyToPlay = false;
+  playBtn.textContent = '▶️';
   audio.load();
 }
 
+// When ready, play
 audio.addEventListener('canplay', () => {
   isReadyToPlay = true;
-  audio.play().catch(e => {
-    // Catch play() errors (autoplay restrictions etc)
-    console.log('Play error:', e);
-  });
+  audio.play().catch(e => console.log('Play error:', e));
 });
 
-document.getElementById('playBtn').addEventListener('click', () => {
-  if (isReadyToPlay) {
+// Play/Pause button
+playBtn.addEventListener('click', () => {
+  if (!isReadyToPlay) return;
+  if (audio.paused) {
     audio.play();
+  } else {
+    audio.pause();
   }
 });
 
-document.getElementById('pauseBtn').addEventListener('click', () => {
-  audio.pause();
+// Update button icon
+audio.addEventListener('play', () => playBtn.textContent = '⏸️');
+audio.addEventListener('pause', () => playBtn.textContent = '▶️');
+
+// Auto next on end
+audio.addEventListener('ended', () => {
+  loadTrack((currentIndex + 1) % shuffledIndexes.length);
 });
 
-document.getElementById('prevBtn').addEventListener('click', () => {
-  loadTrack((currentIndex - 1 + songs.length) % songs.length);
+// Prev / Next buttons
+prevBtn.addEventListener('click', () => {
+  loadTrack((currentIndex - 1 + shuffledIndexes.length) % shuffledIndexes.length);
+});
+nextBtn.addEventListener('click', () => {
+  loadTrack((currentIndex + 1) % shuffledIndexes.length);
 });
 
-document.getElementById('nextBtn').addEventListener('click', () => {
-  loadTrack((currentIndex + 1) % songs.length);
-});
-
+// Seekbar update
 audio.addEventListener('timeupdate', () => {
-  seekBar.value = (audio.currentTime / audio.duration) * 100 || 0;
+  if (audio.duration) {
+    seekBar.value = (audio.currentTime / audio.duration) * 100;
+  }
 });
-
 seekBar.addEventListener('input', () => {
   if (audio.duration) {
     audio.currentTime = (seekBar.value / 100) * audio.duration;
   }
 });
 
+// Load first track
 window.addEventListener('load', () => loadTrack(0));
