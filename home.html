@@ -98,17 +98,15 @@
   </div>
 </footer>
 
-<!-- Spacer to make room for fixed media player (optional if body padding is used) -->
-<div style="height: 60px;"></div>
+<!-- Spacer to make room for fixed media player -->
+<div style="height: 20px;"></div>
 
-<!-- Media Player placed last but stays fixed -->
-<div id="mediaPlayer" class="bestbudz-player">
-  <audio id="audioTrack"></audio> <!-- ✅ Audio element -->
-  
-  <div class="track-meta" id="trackTitle">🎵 Loading...</div> <!-- ✅ Track title -->
+<!-- Media Player -->
+<audio id="audioTrack"></audio>
 
-  <input type="range" id="seekBar" value="0" min="0" max="100" /> <!-- ✅ Seek bar inside player -->
-
+<div class="bestbudz-player">
+  <p class="track-meta" id="trackTitle">🎶 Loading...</p>
+  <input type="range" id="seekBar" />
   <div class="controls">
     <button id="prevBtn">⏮️</button>
     <button id="playBtn">▶️</button>
@@ -116,11 +114,11 @@
   </div>
 </div>
 
+<!-- Spacer to prevent content overlap -->
+<div class="media-player-spacer"></div>
 </main>
-
 <script src="player.js"></script>
 
+
 </body>
-</html>
-
-
+</html> 
