@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donations - Best Budz</title>
+
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Your Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <a href="home.html" class="header-link">
+      <img src="Images/header.png" alt="Best Budz Logo" class="header-logo" />
+    </a>
+  </div>
+</header>
+
+<nav id="navbar">
+  <ul class="nav-links" id="nav-links">    
+    <li><a href="products.html">Products</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="donations.html">Donations</a></li>
+  </ul>
+</nav>
+
+<main class="donations-section">
+  <h2>Support Best Budz</h2>
+  <p>Help us grow and keep delivering top-quality content. Donate using your preferred crypto below!</p>
+
+  <div class="donation-grid">
+    <div class="donation-card">
+      <h3>Bitcoin (BTC)</h3>
+      <p class="crypto-address">N/A</p>
+      <button onclick="copyAddress('bc1qxyzexampleaddress12345')">Copy</button>
+    </div>
+    <div class="donation-card">
+      <h3>Ethereum (ETH)</h3>
+      <p class="crypto-address">N/A</p>
+      <button onclick="copyAddress('0xabc123exampleaddress6789')">Copy</button>
+    </div>
+    <div class="donation-card">
+      <h3>Litecoin (LTC)</h3>
+      <p class="crypto-address">N/A</p>
+      <button onclick="copyAddress('ltc1qexampleaddress54321')">Copy</button>
+    </div>
+  </div>
+</main>
+
+<footer id="pageFooter">
+  <div class="footer-content">
+    <img src="Images/footer.png" alt="Footer Logo" class="footer-logo" />
+    <div style="text-align: center;">
+      <p>Follow Best Budz</p>
+      <div class="footer-social">
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://tiktok.com" target="_blank" aria-label="TikTok">
+          <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://discord.gg" target="_blank" aria-label="Discord">
+          <i class="fab fa-discord"></i>
+        </a>
+      </div>
+      <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; font-size: 0.95rem;">
+        <a href="contribution.html">Contributions</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+      <div style="text-align: center; font-size: 0.9rem; color: #ccc;">
+        <p>&copy; 2024 Best Budz. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Spacer to make room for fixed media player -->
+<div style="height: 80px;"></div>
+
+<!-- Audio Element -->
+<audio id="audioTrack"></audio>
+
+<!-- Media Player -->
+<div class="bestbudz-player">
+  <div class="player-top">
+    <p class="track-meta" id="trackTitle">🎶 Loading...</p>
+    <div class="controls">
+      <button id="prevBtn">⏮️</button>
+      <button id="playBtn">▶️</button>
+      <button id="nextBtn">⏭️</button>
+    </div>
+  </div>
+  <input type="range" id="seekBar" />
+</div>
+
+<!-- Spacer for media player -->
+<div class="media-player-spacer"></div>
+
+<script src="player.js"></script>
+<script>
+  function copyAddress(address) {
+    navigator.clipboard.writeText(address).then(() => {
+      alert('Address copied!');
+    });
+  }
+</script>
+
+</body>
+</html>

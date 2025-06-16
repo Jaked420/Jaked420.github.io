@@ -1,72 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-     <!-- Open Graph Meta Tags -->
-<meta property="og:title" content="Best Budz - Your Go-To Shop for Quality Products" />
-<meta property="og:description" content="Best Budz offers a variety of high-quality products. Check out our latest collection!" />
-<meta property="og:image" content="https://bestbudz.xyz/Images/meta_weed_guy_1.png" />
-<meta property="og:url" content="https://bestbudz.xyz" />
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Best Budz - Your Go-To Shop for Quality Products" />
+  <meta property="og:description" content="Best Budz offers a variety of high-quality products. Check out our latest collection!" />
+  <meta property="og:image" content="https://bestbudz.xyz/Images/meta_weed_guy_1.png" />
+  <meta property="og:url" content="https://bestbudz.xyz" />
 
-<!-- Twitter Meta Tags -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Best Budz - Your Go-To Shop for Quality Products" />
-<meta name="twitter:description" content="Best Budz offers a variety of high-quality products. Check out our latest collection!" />
-<meta name="twitter:image" content="https://bestbudz.xyz/Images/meta_weed_guy_1.png" />
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Best Budz - Your Go-To Shop for Quality Products" />
+  <meta name="twitter:description" content="Best Budz offers a variety of high-quality products. Check out our latest collection!" />
+  <meta name="twitter:image" content="https://bestbudz.xyz/Images/meta_weed_guy_1.png" />
 
-    
-    <!-- For ICO format -->
-<link rel="icon" href="/Images/ico.ico" type="image/x-icon">
+  <!-- Favicon -->
+  <link rel="icon" href="/Images/ico.ico" type="image/x-icon" />
 
-    <!-- For Verification --!>
-    <title>Age Verification</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
-        .popup {
-            text-align: center;
-        }
-        .popup button {
-            background: #28a745;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            margin: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .popup button#no {
-            background: #dc3545;
-        }
-    </style>
+  <title>Best Budz | Checking your browser...</title>
+
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles/smoke-bg.css" />
+  <style>
+    .loading-overlay {
+      position: absolute;
+      z-index: 9999;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      color: #00ff88;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .loading-overlay img {
+      width: 250px;
+      max-width: 80%;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #00ff88;
+    }
+
+    .spinner {
+      border: 6px solid rgba(0, 255, 136, 0.3);
+      border-top: 6px solid #00ff88;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+      margin-top: 20px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
 </head>
 <body>
-    <div class="popup">
-        <h2>Are you 21 years or older?</h2>
-        <button id="yes">Yes</button>
-        <button id="no">No</button>
-    </div>
+  <!-- Smoky Background -->
+  <div class="smoke-bg"></div>
 
-    <script>
-        document.getElementById('yes').addEventListener('click', () => {
-            window.location.href = 'home.html'; // Redirect to index.html if 'Yes'
-        });
+  <!-- Content Overlay -->
+  <div class="loading-overlay">
+    <img src="Images/indexpic.jpeg" alt="Best Budz Welcome" />
+    <h2>Checking your browser before accessing Best Budz...</h2>
+    <div class="spinner"></div>
+  </div>
 
-        document.getElementById('no').addEventListener('click', () => {
-            window.location.href = 'https://www.google.com'; // Redirect to Google if 'No'
-        });
-    </script>
+  <script>
+    setTimeout(() => {
+      window.location.href = "home.html";
+    }, 4000);
+  </script>
 </body>
 </html>
-

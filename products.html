@@ -28,6 +28,7 @@
   <ul class="nav-links" id="nav-links">
     <li><a href="products.html">Products</a></li>
     <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="donations.html">Donations</a></li>
   </ul>
 </nav>
 
@@ -55,9 +56,9 @@
   </div>
 </main>
 
-<footer>
+<footer id="pageFooter">
   <div class="footer-content">
-    <img src="Images/footer.png" alt="Footer Logo" class="footer-logo" />
+    <img src="Images/header.png" alt="Footer Logo" class="footer-logo" />
     <div style="text-align: center;">
       <p>Follow Best Budz</p>
       <div class="footer-social">
@@ -82,14 +83,37 @@
       </div>
       <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; font-size: 0.95rem;">
         <a href="contribution.html">Contributions</a>
-        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="terms.html">Terms of Service</a>
       </div>
-      <div style="text-align: center; font-size: 0.9rem; color: #ccc;">
+      <div style="text-align: center; font-size: 0.9rem; color: white;">
         <p>&copy; 2024 Best Budz. All rights reserved.</p>
       </div>
     </div>
   </div>
 </footer>
+<!-- Spacer to make room for fixed media player -->
+<div style="height: 0px;"></div>
+
+<!-- Audio Element -->
+<audio id="audioTrack"></audio>
+
+<!-- Media Player -->
+<div class="bestbudz-player">
+  <div class="player-top">
+    <p class="track-meta" id="trackTitle">🎶 Loading...</p>
+    <div class="controls">
+      <button id="prevBtn">⏮️</button>
+      <button id="playBtn">▶️</button>
+      <button id="nextBtn">⏭️</button>
+    </div>
+  </div>
+  <input type="range" id="seekBar" />
+</div>
+
+<!-- Spacer to prevent content overlap -->
+<div class="media-player-spacer"></div>
+</main>
+<script src="player.js"></script>
 
 </body>
 </html>

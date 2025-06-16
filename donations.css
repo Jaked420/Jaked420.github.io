@@ -1,0 +1,115 @@
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  color: white;
+  overflow-x: hidden;
+  background-image: url('Images/weed-nav.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  max-width: 100vw;
+}
+
+/* Transparent containers */
+header, footer, main, section {
+  background: transparent;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 40px 20px;
+  box-shadow: 0 0 20px #00ff88;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #00ff88;
+  text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Main donation section */
+main {
+  padding: 40px 20px;
+}
+
+.donation-section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.donation-section h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 0 0 8px #00ff88;
+}
+
+.crypto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.crypto-card {
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid #00ff88;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 12px #00ff88;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.crypto-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00ff88, 0 0 40px #00ff88;
+}
+
+.crypto-card h3 {
+  color: #00ff88;
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px #00ff88;
+}
+
+.address {
+  word-break: break-all;
+  font-family: monospace;
+  background: #181818;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  display: inline-block;
+  color: #fff;
+}
+
+.balance {
+  font-weight: bold;
+  color: #00ff88;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 3px solid #00ff88;
+  box-shadow: 0 0 15px #00ff88;
+  margin-top: 40px;
+}
+
+footer p {
+  font-size: 1rem;
+  color: #00ff88;
+}
