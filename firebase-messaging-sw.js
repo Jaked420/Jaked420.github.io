@@ -1,12 +1,12 @@
 // firebase-messaging-sw.js
-importScripts("https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js");
-importScripts("https://www.gstatic.com/firebasejs/11.9.1/firebase-messaging.js");
+importScripts("https://www.gstatic.com/firebasejs/11.9.1/firebase-app-compat.js");
+importScripts("https://www.gstatic.com/firebasejs/11.9.1/firebase-messaging-compat.js");
 
 firebase.initializeApp({
   apiKey: "AIzaSyD0kuWsYAXU-YmqP-mv52WzA13UUHAKEmw",
   authDomain: "best-budz-0420.firebaseapp.com",
   projectId: "best-budz-0420",
-  storageBucket: "best-budz-0420.appspot.com", // FIXED
+  storageBucket: "best-budz-0420.appspot.com",
   messagingSenderId: "188695599598",
   appId: "1:188695599598:web:77cb96ade47af1c67516ff"
 });
@@ -18,7 +18,7 @@ messaging.onBackgroundMessage(function(payload) {
   const notificationTitle = payload.notification.title;
   const notificationOptions = {
     body: payload.notification.body,
-    icon: '/Images/icon.png' // make sure this icon exists
+    icon: '/Images/icon.png'
   };
 
   self.registration.showNotification(notificationTitle, notificationOptions);
