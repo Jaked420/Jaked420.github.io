@@ -122,7 +122,52 @@
 <div class="media-player-spacer"></div>
 </main>
 <script src="player.js"></script>
+  
+  <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+  import { getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-messaging.js";
 
+  const firebaseConfig = {
+    apiKey: "AIzaSyD0kuWsYAXU-YmqP-mv52WzA13UUHAKEmw",
+    authDomain: "best-budz-0420.firebaseapp.com",
+    projectId: "best-budz-0420",
+    storageBucket: "best-budz-0420.firebasestorage.app",
+    messagingSenderId: "188695599598",
+    appId: "1:188695599598:web:77cb96ade47af1c67516ff",
+    measurementId: "G-P66GG85VGW"
+  };
 
+  const app = initializeApp(firebaseConfig);
+  const messaging = getMessaging(app);
+
+  // Ask permission and get the token
+  async function requestPermission() {
+    try {
+      const permission = await Notification.requestPermission();
+      if (permission === 'granted') {
+        const token = await getToken(messaging, {
+          vapidKey: "AIzaSyD0kuWsYAXU-YmqP-mv52WzA13UUHAKEmw" // Replace this
+        });
+        console.log("Notification permission granted.");
+        console.log("FCM Token:", token);
+        // Optionally: send this token to your server or log it somewhere
+      } else {
+        console.warn("Notification permission denied.");
+      }
+    } catch (err) {
+      console.error("Error getting permission or token:", err);
+    }
+  }
+
+  requestPermission();
+
+  // (Optional) Listen to messages while tab is open
+  onMessage(messaging, (payload) => {
+    console.log("Message received in foreground:", payload);
+    // You can show a custom popup/toast here
+  });
+</script>
+
+  
 </body>
 </html> 
