@@ -123,9 +123,10 @@
 </main>
 <script src="player.js"></script>
   
-  <script type="module">
+<script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
-  import { getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-messaging.js";
+  import { getMessaging, getToken } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-messaging.js";
+  import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyD0kuWsYAXU-YmqP-mv52WzA13UUHAKEmw",
@@ -133,39 +134,34 @@
     projectId: "best-budz-0420",
     storageBucket: "best-budz-0420.firebasestorage.app",
     messagingSenderId: "188695599598",
-    appId: "1:188695599598:web:77cb96ade47af1c67516ff",
-    measurementId: "G-P66GG85VGW"
+    appId: "1:188695599598:web:77cb96ade47af1c67516ff"
   };
 
   const app = initializeApp(firebaseConfig);
   const messaging = getMessaging(app);
+  const db = getFirestore(app);
 
-  // Ask permission and get the token
-  async function requestPermission() {
-    try {
-      const permission = await Notification.requestPermission();
-      if (permission === 'granted') {
-        const token = await getToken(messaging, {
-          vapidKey: "AIzaSyD0kuWsYAXU-YmqP-mv52WzA13UUHAKEmw" // Replace this
-        });
-        console.log("Notification permission granted.");
-        console.log("FCM Token:", token);
-        // Optionally: send this token to your server or log it somewhere
-      } else {
-        console.warn("Notification permission denied.");
-      }
-    } catch (err) {
-      console.error("Error getting permission or token:", err);
+  async function saveToken() {
+    const permission = await Notification.requestPermission();
+    if (permission !== 'granted') return alert("Notification permission denied.");
+
+    const token = await getToken(messaging, {
+      vapidKey: "AIzaSyD0kuWsYAXU-YmqP-mv52WzA13UUHAKEmw"
+    });
+
+    if (token) {
+      const id = token.slice(0, 10); // use part of token as ID
+      await setDoc(doc(db, "fcmTokens", id), {
+        token,
+        timestamp: Date.now()
+      });
+      console.log("FCM Token saved:", token);
+    } else {
+      console.warn("No token received");
     }
   }
 
-  requestPermission();
-
-  // (Optional) Listen to messages while tab is open
-  onMessage(messaging, (payload) => {
-    console.log("Message received in foreground:", payload);
-    // You can show a custom popup/toast here
-  });
+  saveToken();
 </script>
 
   
